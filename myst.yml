@@ -107,3 +107,6 @@ site:
     logo_alt: Liouaï Digital Education
     favicon: assets/favicon.svg
     style: assets/liouai.css
+     nav:
+     - title: Liouaï Digital Education
+       url: https://liouai-digital-education.github.io
