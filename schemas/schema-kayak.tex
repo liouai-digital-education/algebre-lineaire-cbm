@@ -1,0 +1,36 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=1.15]
+\newcommand{\riviere}{%
+  \fill[vertclair] (-1.9,0) rectangle (2.4,2.6);
+  \draw[navy, line width=1pt] (-1.9,0) -- (2.4,0) node[note, right] {rive sud};
+  \draw[navy, line width=1pt] (-1.9,2.6) -- (2.4,2.6) node[note, right] {rive nord};
+  \foreach \y in {0.6, 1.9} \draw[fleche, gris, line width=0.8pt] (-1.7,\y) -- (-1.0,\y);
+  \node[note] at (-1.35, 2.25) {courant};}
+% --- Cas 1 : pointer droit vers le nord
+\begin{scope}
+\riviere
+\node[titre] at (0.25, 3.15) {Pointer droit vers le nord};
+\coordinate (O) at (0,0.25);
+\draw[vecteur, vertfonce] (O) -- node[left] {$\mathbf{v}_{\text{propre}}$} ($(O)+(0,2)$);
+\draw[vecteur, gris] ($(O)+(0,2)$) -- node[above] {$\mathbf{c}$} ($(O)+(1,2)$);
+\draw[vecteur, navy, line width=1.8pt] (O) -- node[right, pos=0.45] {$\mathbf{v}_{\text{réelle}}$} ($(O)+(1,2)$);
+\node[note, align=center] at (0.25, -0.55) {le kayak dérive vers l'est};
+\end{scope}
+% --- Cas 2 : viser l'amont
+\begin{scope}[xshift=6.2cm]
+\riviere
+\node[titre] at (0.25, 3.15) {Viser l'amont};
+\coordinate (O) at (0,0.25);
+\coordinate (P) at ($(O)+(-1,1.732)$);
+\coordinate (N) at ($(O)+(0,1.732)$);
+\draw[gris, densely dashed] (O) -- ($(O)+(0,2.2)$);
+\draw[vecteur, vertfonce] (O) -- node[left, pos=0.6] {$\mathbf{v}_{\text{propre}}$} (P);
+\draw[vecteur, gris] (P) -- node[above] {$\mathbf{c}$} (N);
+\draw[vecteur, navy, line width=1.8pt] (O) -- node[right, pos=0.5] {$\mathbf{v}_{\text{réelle}}$} (N);
+\coordinate (H) at ($(O)+(0,1)$);
+\pic[draw=vertfonce, line width=0.8pt, angle radius=0.75cm, "$\theta$", angle eccentricity=1.35] {angle = H--O--P};
+\node[note, align=center] at (0.25, -0.55) {il traverse tout droit, plus lentement};
+\end{scope}
+\end{tikzpicture}
+\end{document}

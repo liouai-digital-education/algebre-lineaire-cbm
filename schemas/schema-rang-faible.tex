@@ -1,0 +1,19 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\def\matrice#1#2#3{\filldraw[fill=#3, draw=navy, line width=0.8pt] (#1,-1) rectangle ++(#2,2);}
+\filldraw[fill=fond, draw=navy, line width=0.8pt] (0,-1.1) rectangle (2.4,1.1); \node[font=\small] at (1.2,0) {$A$};
+\node at (2.9,0) {$=$};
+% couches de rang 1
+\foreach \x/\s/\c/\o in {3.4/1/vertclair/1, 6.3/2/vertclair/0.75, 9.2/3/fond/0.45}{
+  \filldraw[fill=vert!60, draw=navy, line width=0.6pt, opacity=\o] (\x,-1.1) rectangle ++(0.3,2.2);
+  \filldraw[fill=vert!60, draw=navy, line width=0.6pt, opacity=\o] (\x+0.45,0.8) rectangle ++(1.6,0.3);
+  \node[font=\small, anchor=south] at (\x+1.25,-0.9) {$\sigma_{\s}\,\mathbf{u}_{\s}\mathbf{v}_{\s}^{\mathsf{T}}$};
+}
+\node at (5.95,0) {$+$}; \node at (8.85,0) {$+$}; \node at (11.75,0) {$+\ \cdots$};
+\draw[decorate, decoration={brace, amplitude=6pt, mirror}, vertfonce, line width=1.1pt] (3.4,-1.35) -- (8.6,-1.35)
+  node[midway, below=8pt, font=\small, text=vertfonce] {on garde les $k$ premières couches : $A_k$};
+\node[note, align=left, anchor=west] at (13.0,0) {chaque couche : une colonne $\mathbf{u}_i$\\ fois une ligne $\mathbf{v}_i^{\mathsf{T}}$, pondérée par $\sigma_i$\\[3pt]
+$A_k$ est la meilleure approximation\\ de rang $k$, avec l'erreur\\ $\lVert A - A_k \rVert = \sqrt{\sigma_{k+1}^2 + \sigma_{k+2}^2 + \cdots}$};
+\end{tikzpicture}
+\end{document}

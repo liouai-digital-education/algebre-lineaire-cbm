@@ -1,0 +1,22 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=0.75]
+\foreach \dx/\titre/\note in {0/{trop simple}/{erreur élevée partout}, 7.4/{adapté}/{erreur faible sur les deux}, 14.8/{trop souple}/{parfait sur l'apprentissage,\\ mauvais sur le test}}{
+\begin{scope}[xshift=\dx cm]
+\node[titre] at (3,5.1) {\titre};
+\draw[gris, line width=0.6pt] (0,0) rectangle (6,4.5);
+\foreach \x/\y in {0.5/1.0, 1.4/2.1, 2.3/2.9, 3.4/3.3, 4.3/3.0, 5.4/1.9}{ \fill[navy] (\x,\y) circle (2.6pt); }
+\foreach \x/\y in {0.9/1.75, 2.9/3.35, 4.9/2.35}{ \filldraw[fill=jaune, draw=navy, line width=0.5pt] (\x,\y) ++(-0.11,-0.11) rectangle ++(0.22,0.22); }
+\node[note, align=center] at (3,-0.75) {\note};
+\end{scope}}
+\draw[vertfonce, line width=1.5pt] (0.2,1.9) -- (5.8,2.9);
+\begin{scope}[xshift=7.4cm]
+\draw[vertfonce, line width=1.5pt] plot[smooth, domain=0.2:5.8] (\x, {0.6+1.55*\x-0.25*\x*\x});
+\end{scope}
+\begin{scope}[xshift=14.8cm]
+\draw[vertfonce, line width=1.5pt] plot[smooth, tension=0.7] coordinates {(0.2,0.2) (0.5,1.0) (0.9,3.4) (1.4,2.1) (1.9,0.9) (2.3,2.9) (2.9,4.3) (3.4,3.3) (3.8,2.2) (4.3,3.0) (4.9,4.2) (5.4,1.9) (5.8,0.6)};
+\end{scope}
+\node[note, anchor=west] at (0,-2.0) {\tikz\fill[navy] (0,0) circle (2.6pt); données d'apprentissage (servent à ajuster)\qquad
+\tikz\filldraw[fill=jaune, draw=navy] (0,0) rectangle (0.22,0.22); données de test (mises de côté pour juger)};
+\end{tikzpicture}
+\end{document}

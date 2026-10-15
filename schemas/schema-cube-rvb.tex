@@ -1,0 +1,21 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[x={(1.6cm,-0.45cm)}, y={(1.3cm,0.75cm)}, z={(0cm,1.75cm)}, scale=1.0]
+% sommets du cube couleur
+\coordinate (O) at (0,0,0); \coordinate (R) at (1,0,0); \coordinate (G) at (0,1,0); \coordinate (B) at (0,0,1);
+\coordinate (RG) at (1,1,0); \coordinate (RB) at (1,0,1); \coordinate (GB) at (0,1,1); \coordinate (W) at (1,1,1);
+\definecolor{cR}{rgb}{1,0,0}\definecolor{cG}{rgb}{0,1,0}\definecolor{cB}{rgb}{0,0,1}
+\definecolor{cY}{rgb}{1,1,0}\definecolor{cM}{rgb}{1,0,1}\definecolor{cC}{rgb}{0,1,1}
+\draw[gris, line width=0.6pt, dashed] (O) -- (G) -- (RG); \draw[gris, line width=0.6pt, dashed] (G) -- (GB);
+\draw[navy, line width=0.8pt] (O) -- (R) -- (RG) -- (W) -- (GB) -- (B) -- cycle;
+\draw[navy, line width=0.8pt] (R) -- (RB) -- (W); \draw[navy, line width=0.8pt] (B) -- (RB);
+% axe des gris = direction de la luminance
+\draw[line width=2.6pt, gris!70!navy] (O) -- (W);
+\draw[fleche, navy, line width=1.6pt] (O) -- (0.62,0.62,0.62);
+\node[font=\small, text=navy, anchor=west] (lum) at (1.45,1.05,0.62) {$Y$ : luminance};
+\draw[navy, line width=0.5pt] (lum.west) -- (0.82,0.82,0.82);
+\foreach \p/\c/\n/\pos in {O/black/noir/below left, R/cR/rouge/below, G/cG/vert/above left, B/cB/bleu/left, RG/cY/jaune/right, RB/cM/magenta/below right, GB/cC/cyan/above, W/white/blanc/above right}
+  \filldraw[fill=\c, draw=navy, line width=0.6pt] (\p) circle (3.2pt) node[\pos=3pt, note] {\n};
+\node[note, align=left, anchor=west] at (2.3,-0.2,0.2) {La diagonale noir $\to$ blanc porte la luminosité.\\ Les deux directions perpendiculaires\\ ($C_b$, $C_r$) ne portent que la teinte.};
+\end{tikzpicture}
+\end{document}

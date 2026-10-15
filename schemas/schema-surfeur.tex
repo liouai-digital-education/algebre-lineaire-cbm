@@ -1,0 +1,17 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[page/.style={draw=navy, line width=0.9pt, rounded corners=3pt, fill=fond, minimum width=1.3cm, minimum height=0.9cm, font=\small}]
+\node[page] (A) at (0,0) {A};
+\node[page] (B) at (3,1.2) {B};
+\node[page] (C) at (3,-1.2) {C};
+\node[page, fill=vertclair] (D) at (6,0) {D};
+\draw[fleche, navy] (A) -- (B); \draw[fleche, navy] (A) -- (C);
+\draw[fleche, navy] (B) -- (D); \draw[fleche, navy] (C) -- (D);
+\draw[fleche, navy] (C) -- (B);
+\draw[fleche, navy] (D.south) to[out=-90, in=-90, looseness=0.75] (A.south);
+\node[note, align=center] at (3,-2.75) {avec la probabilité $d$ (par exemple 0,85), le surfeur clique sur un lien au hasard ;\\ avec la probabilité $1-d$, il saute vers une page quelconque};
+\node[boite, anchor=west, font=\small, align=left] at (7.6,0) {Le PageRank est la proportion\\ du temps passé sur chaque page :\\[3pt]
+$\mathbf{r} = G\,\mathbf{r}$, avec\\ $G = d\,M + \dfrac{1-d}{n}\,J$\\[4pt]
+$\mathbf{r}$ est le vecteur propre de $G$\\ pour la valeur propre 1};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,27 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=0.9]
+% --- Somme : bout à bout et parallélogramme
+\begin{scope}
+\node[titre] at (2.2, 3.9) {Somme : enchaîner deux déplacements};
+\coordinate (O) at (0,0); \coordinate (U) at (3,1); \coordinate (V) at (1,2);
+\draw[gris, densely dashed] (V) -- ($(U)+(V)$);
+\draw[gris, densely dashed] (O) -- (V);
+\draw[vecteur, vertfonce] (O) -- node[below right, pos=0.55] {$\mathbf{u}$} (U);
+\draw[vecteur, vertfonce] (U) -- node[right] {$\mathbf{v}$} ($(U)+(V)$);
+\draw[vecteur, navy, line width=1.8pt] (O) -- node[sloped, above, pos=0.55] {$\mathbf{u}+\mathbf{v}$} ($(U)+(V)$);
+\fill[navy] (O) circle (1.6pt) node[below left] {départ};
+\node[note, align=left, anchor=west] at (-0.2, -1.1) {$\mathbf{u}=(3,1)$, $\mathbf{v}=(1,2)$, $\mathbf{u}+\mathbf{v}=(4,3)$};
+\end{scope}
+% --- Multiplication par un nombre
+\begin{scope}[xshift=7.6cm]
+\node[titre] at (1.4, 3.9) {Multiplication par un nombre};
+\coordinate (O) at (0,0.6);
+\draw[vecteur, gris] (O) -- node[below right, text=gristexte] {$-\mathbf{u}$} ($(O)+(-2,-1)$);
+\draw[vecteur, navy, line width=1.8pt] (O) -- node[above left, pos=0.75] {$2\mathbf{u}$} ($(O)+(4,2)$);
+\draw[vecteur, vertfonce] (O) -- node[below right, pos=0.6] {$\mathbf{u}$} ($(O)+(2,1)$);
+\fill[navy] (O) circle (1.6pt);
+\node[note, align=left, anchor=west] at (-2, -1.1) {$2\mathbf{u}$ : deux fois plus loin ; $-\mathbf{u}$ : demi-tour};
+\end{scope}
+\end{tikzpicture}
+\end{document}

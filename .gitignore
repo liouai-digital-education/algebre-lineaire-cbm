@@ -1,0 +1,11 @@
+# Données personnelles de l'apprenant
+progression.json
+profil.png
+
+# Jupyter et Python
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+
+# Site généré
+_build/

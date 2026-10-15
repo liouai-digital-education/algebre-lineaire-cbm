@@ -1,0 +1,16 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[node distance=3.4cm, etat/.style={circle, draw=navy, line width=1pt, fill=vertclair, minimum size=1.7cm, align=center, font=\small}]
+\node[etat] (J) {juvéniles\\ (0 an)};
+\node[etat, right=of J] (U) {1 an};
+\node[etat, right=of U] (A) {adultes\\ (2 ans et +)};
+\draw[fleche, navy] (J) -- (U) node[midway, above, font=\small] {survie $s_0$};
+\draw[fleche, navy] (U) -- (A) node[midway, above, font=\small] {survie $s_1$};
+\draw[fleche, navy] (A) to[out=60, in=0, looseness=5] node[right, font=\small] {survie $s_2$} (A);
+\draw[fleche, vertfonce, dashed] (U) to[bend left=40] node[below, font=\small, text=vertfonce] {naissances $f_1$} (J);
+\draw[fleche, vertfonce, dashed] (A) to[bend left=50] node[below, font=\small, text=vertfonce] {naissances $f_2$} (J);
+\node[boite, font=\small, anchor=north] at ($(U)+(0,-3.7)$) {$\begin{pmatrix} n_0 \\ n_1 \\ n_2 \end{pmatrix}_{t+1}
+= \underbrace{\begin{pmatrix} 0 & f_1 & f_2 \\ s_0 & 0 & 0 \\ 0 & s_1 & s_2 \end{pmatrix}}_{L \text{ (matrice de Leslie)}}
+\begin{pmatrix} n_0 \\ n_1 \\ n_2 \end{pmatrix}_{t}$};
+\end{tikzpicture}
+\end{document}

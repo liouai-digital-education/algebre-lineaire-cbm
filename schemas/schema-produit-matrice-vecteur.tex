@@ -1,0 +1,27 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[x=0.7cm, y=0.7cm]
+% Q : 3 x 4
+\foreach \i in {0,...,3} \foreach \j in {0,...,2} \draw[gris, fill=fond] (\i, -\j) rectangle ++(1,-1);
+\foreach \i in {0,...,3} \draw[draw=vertfonce, fill=vert!35] (\i, -1) rectangle ++(1,-1);
+\node[titre] at (2, 0.9) {\texttt{Q}};
+\node[note] at (2, -3.6) {forme \texttt{(3, 4)}};
+\node[note, align=center] at (2, -4.5) {3 recettes $\times$ 4 ingrédients};
+\node[font=\Large] at (4.7, -1.5) {@};
+% prix : 4
+\foreach \j in {0,...,3} \draw[gris, fill=fond] (5.5, 0.5-\j) rectangle ++(1,-1);
+\foreach \j in {0,...,3} \draw[draw=vertfonce, fill=vert!35] (5.5, 0.5-\j) rectangle ++(1,-1);
+\node[titre] at (6, 1.4) {\texttt{prix}};
+\node[note] at (6, -4.1) {forme \texttt{(4,)}};
+\node[font=\Large] at (7.4, -1.5) {$=$};
+% résultat : 3
+\foreach \j in {0,...,2} \draw[gris, fill=fond] (8.2, -\j) rectangle ++(1,-1);
+\draw[draw=vertfonce, fill=vert] (8.2, -1) rectangle ++(1,-1);
+\node[titre] at (8.7, 0.9) {\texttt{coût}};
+\node[note] at (8.7, -3.6) {forme \texttt{(3,)}};
+\node[note, align=center] at (8.7, -4.5) {un coût\\ par recette};
+% règle des dimensions
+\node[font=\footnotesize, text=vertfonce, align=center] at (4.6, -5.9) {règle : le nombre de \textbf{colonnes} de \texttt{Q}\\ doit égaler la \textbf{longueur} de \texttt{prix} (ici 4)};
+\node[note, align=center] at (4.6, 2.6) {chaque coût = une ligne de \texttt{Q} combinée avec \texttt{prix}};
+\end{tikzpicture}
+\end{document}

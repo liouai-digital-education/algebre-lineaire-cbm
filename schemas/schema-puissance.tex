@@ -1,0 +1,16 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=1.6]
+\draw[gris, line width=0.6pt] (-0.3,0) -- (3.4,0); \draw[gris, line width=0.6pt] (0,-0.3) -- (0,2.5);
+\draw[vertfonce, densely dashed, line width=0.8pt] (0,0) -- (3.3,2.2) node[right, font=\small, text=vertfonce] {direction propre dominante};
+\draw[vecteur, gris] (0,0) -- (82:2.2) node[above, font=\footnotesize, text=navy] {$\mathbf{x}_0$};
+\draw[vecteur, gristexte] (0,0) -- (58:2.2) node[above, font=\footnotesize] {$\mathbf{x}_1$};
+\draw[vecteur, navy!70] (0,0) -- (44:2.2) node[above, font=\footnotesize] {$\mathbf{x}_2$};
+\draw[vecteur, navy!85] (0,0) -- (38:2.2);
+\draw[vecteur, navy] (0,0) -- (35:2.2) node[below right=-1pt, font=\footnotesize] {$\mathbf{x}_4$};
+\node[boite, anchor=west, font=\small, align=left] at (4.0,1.1) {Méthode de la puissance\\[3pt]
+$\mathbf{x}_{k+1} = \dfrac{A\,\mathbf{x}_k}{\lVert A\,\mathbf{x}_k \rVert}$\\[5pt]
+à chaque produit, la composante sur $\mathbf{v}_1$\\ est multipliée par $\lambda_1$, les autres par\\ des nombres plus petits :
+$\mathbf{x}_k$ s'aligne\\ sur $\mathbf{v}_1$ au rythme de $\lvert \lambda_2 / \lambda_1 \rvert^k$};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,22 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[
+  sig/.style={boite, minimum width=2.4cm, minimum height=1.1cm, font=\small},
+  op/.style={circle, draw=navy, line width=0.9pt, fill=vertclair, minimum size=1cm, font=\small},
+  etape/.style={fleche, vertfonce, line width=1.2pt}]
+\node[sig] (x) at (0,0) {code-barres\\ net $\mathbf{x}$};
+\node[op] (b) at (3,0) {$B$};
+\node[op, fill=jauneclair] (plus) at (5.4,0) {$+$};
+\node[sig] (y) at (8.2,0) {photo floue\\ $\mathbf{y} = B\mathbf{x} + \boldsymbol{\varepsilon}$};
+\draw[etape] (x) -- (b);
+\draw[etape] (b) -- node[above, note] {flou} (plus);
+\draw[etape] (plus) -- (y);
+\node[note, align=center] (bruit) at (5.4,1.6) {bruit du capteur\\ $\boldsymbol{\varepsilon}$, environ 1\,\%};
+\draw[etape, gris] (bruit) -- (plus);
+\node[op] (binv) at (8.2,-2.3) {$B^{-1}$};
+\node[sig, fill=jauneclair, draw=jaune!80!navy] (xh) at (3,-2.3) {$\mathbf{x} + B^{-1}\boldsymbol{\varepsilon}$};
+\draw[etape, navy] (y) -- (binv);
+\draw[etape, navy] (binv) -- node[above, note] {déflouer naïvement} (xh);
+\node[note, align=left, anchor=west] at (-1.2,-3.6) {Le flou est parfaitement annulé, mais le bruit est multiplié par $B^{-1}$,\\ dont les coefficients sont énormes quand $B$ est presque singulière.};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,15 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}
+\filldraw[fill=fond, draw=navy, line width=0.9pt] (0,0) rectangle (3.2,2.6);
+\node[font=\small, align=center] at (1.6,1.3) {image\\ $m \times n$ pixels};
+\node[note] at (1.6,-0.35) {$m\,n$ nombres};
+\draw[fleche, navy] (3.6,1.3) -- (4.8,1.3) node[midway, above, font=\small] {SVD};
+\filldraw[fill=vertclair, draw=navy, line width=0.8pt] (5.2,0) rectangle (5.8,2.6); \node[font=\footnotesize] at (5.5,1.3) {$U_k$};
+\filldraw[fill=jauneclair, draw=navy, line width=0.8pt] (6.1,2.0) rectangle (6.7,2.6); \node[font=\footnotesize] at (6.4,2.3) {$\Sigma_k$};
+\filldraw[fill=vertclair, draw=navy, line width=0.8pt] (7.0,2.0) rectangle (10.2,2.6); \node[font=\footnotesize] at (8.6,2.3) {$V_k^{\mathsf{T}}$};
+\node[note, align=left, anchor=north west] at (6.1,1.6) {$k$ colonnes de $m$ nombres\\ $+\ k$ valeurs singulières\\ $+\ k$ lignes de $n$ nombres};
+\node[note] at (7.7,-0.35) {$k\,(m + n + 1)$ nombres};
+\node[boite, anchor=west, font=\small, align=left] at (10.8,1.3) {taux de compression :\\[3pt] $\dfrac{k\,(m+n+1)}{m\,n}$\\[5pt] pour $600 \times 512$ et $k = 50$ :\\ environ $18\,\%$};
+\end{tikzpicture}
+\end{document}

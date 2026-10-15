@@ -1,0 +1,42 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=0.95]
+\def\panneau#1#2#3{\node[titre] at (#1,2.15) {#2}; \node[note] at (#1,-2.0) {#3};}
+% 1. départ
+\begin{scope}
+\draw[gris, line width=0.5pt] (-1.5,0) -- (1.5,0); \draw[gris, line width=0.5pt] (0,-1.5) -- (0,1.5);
+\draw[navy, line width=1pt] (0,0) circle (1);
+\draw[vecteur, vertfonce] (0,0) -- (40:1) node[above right=-2pt] {$\mathbf{v}_1$};
+\draw[vecteur, jaune!85!navy] (0,0) -- (130:1) node[above left=-2pt] {$\mathbf{v}_2$};
+\end{scope}
+\panneau{0}{départ}{cercle unité}
+\draw[fleche, navy] (1.7,0) -- (2.7,0) node[midway, above, font=\small] {$V^{\mathsf{T}}$};
+% 2. rotation
+\begin{scope}[xshift=4.4cm]
+\draw[gris, line width=0.5pt] (-1.5,0) -- (1.5,0); \draw[gris, line width=0.5pt] (0,-1.5) -- (0,1.5);
+\draw[navy, line width=1pt] (0,0) circle (1);
+\draw[vecteur, vertfonce] (0,0) -- (1,0) node[below right=-2pt] {$\mathbf{e}_1$};
+\draw[vecteur, jaune!85!navy] (0,0) -- (0,1) node[above left=-2pt] {$\mathbf{e}_2$};
+\end{scope}
+\panneau{4.4}{1. tourner}{$\mathbf{v}_1, \mathbf{v}_2$ viennent sur les axes}
+\draw[fleche, navy] (6.1,0) -- (7.1,0) node[midway, above, font=\small] {$\Sigma$};
+% 3. étirement
+\begin{scope}[xshift=9.2cm]
+\draw[gris, line width=0.5pt] (-1.9,0) -- (1.9,0); \draw[gris, line width=0.5pt] (0,-1.5) -- (0,1.5);
+\draw[navy, line width=1pt] (0,0) ellipse (1.7 and 0.55);
+\draw[vecteur, vertfonce] (0,0) -- (1.7,0) node[above=1pt] {$\sigma_1$};
+\draw[vecteur, jaune!85!navy] (0,0) -- (0,0.55) node[above left=-2pt] {$\sigma_2$};
+\end{scope}
+\panneau{9.2}{2. étirer}{selon les axes, par $\sigma_1 \geq \sigma_2 \geq 0$}
+\draw[fleche, navy] (11.2,0) -- (12.2,0) node[midway, above, font=\small] {$U$};
+% 4. rotation finale
+\begin{scope}[xshift=14.3cm]
+\draw[gris, line width=0.5pt] (-1.9,0) -- (1.9,0); \draw[gris, line width=0.5pt] (0,-1.5) -- (0,1.5);
+\draw[navy, line width=1pt, rotate=25] (0,0) ellipse (1.7 and 0.55);
+\draw[vecteur, vertfonce] (0,0) -- (25:1.7) node[above=1pt] {$\sigma_1\mathbf{u}_1$};
+\draw[vecteur, jaune!85!navy] (0,0) -- (115:0.55) node[left=1pt] {$\sigma_2\mathbf{u}_2$};
+\end{scope}
+\panneau{14.3}{3. tourner}{résultat : l'ellipse de $A$}
+\node[boite, font=\small] at (7.2,-3.3) {$A = U\,\Sigma\,V^{\mathsf{T}}$ \qquad toute matrice = rotation, étirement selon des axes perpendiculaires, rotation};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,25 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[
+  etape/.style={boite, minimum width=3.9cm, minimum height=1.35cm, font=\small},
+  machine/.style={etape, fill=vertclair, draw=vertfonce},
+  cycle/.style={fleche, draw=vertfonce, line width=1.4pt}]
+\node[etape]   (d) at (0, 2.6) {\textbf{1. Définir}\\ la question};
+\node[etape]   (a) at (6, 2.6) {\textbf{2. Abstraire}\\ en forme calculable};
+\node[machine] (c) at (6, 0)   {\textbf{3. Calculer}};
+\node[etape]   (i) at (0, 0)   {\textbf{4. Interpréter}\\ dans le contexte};
+\draw[cycle] (d) -- (a);
+\draw[cycle] (a) -- (c);
+\draw[cycle] (c) -- (i);
+\draw[cycle, dashed] (i) -- node[note, left, align=right] {nouvelle\\ question} (d);
+\node[note, above=2pt of d] {vous};
+\node[note, above=2pt of a] {vous : concepts et outils};
+\node[note, below=2pt of c] {la machine, pilotée par vous};
+\node[note, below=2pt of i] {vous};
+\node[font=\small, align=center] (pb) at (-4, 2.6) {problème\\ réel};
+\node[font=\small, align=center] (rep) at (-4, 0) {réponse\\ argumentée};
+\draw[fleche, gris] (pb) -- (d);
+\draw[fleche, gris] (i) -- (rep);
+\node[note, align=center] at (3, 1.3) {critiquer, vérifier,\\ généraliser, communiquer};
+\end{tikzpicture}
+\end{document}

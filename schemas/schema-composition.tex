@@ -1,0 +1,14 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[
+  pt/.style={circle, draw=navy, line width=0.9pt, fill=fond, minimum size=1.05cm, font=\small},
+  etape/.style={fleche, vertfonce, line width=1.3pt}]
+\node[pt] (x) at (0,0) {$\mathbf{x}$};
+\node[pt] (bx) at (4,0) {$B\mathbf{x}$};
+\node[pt, minimum size=1.35cm] (abx) at (8.4,0) {$A(B\mathbf{x})$};
+\draw[etape] (x) -- node[above] {d'abord $B$} (bx);
+\draw[etape] (bx) -- node[above] {ensuite $A$} (abx);
+\draw[fleche, navy, line width=1.3pt] (x.south) to[bend right=28] node[below] {en une seule fois : $AB$} (abx.south);
+\node[note, align=center] at (4.2,-2.6) {on lit le produit $AB$ de droite à gauche :\\ la transformation écrite à droite agit en premier};
+\end{tikzpicture}
+\end{document}

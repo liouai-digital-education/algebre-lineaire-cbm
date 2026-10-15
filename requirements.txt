@@ -1,0 +1,17 @@
+# Notebooks
+numpy>=1.26
+matplotlib>=3.8
+pandas>=2.1
+scipy>=1.11
+sympy>=1.12
+jupyterlab>=4
+ipywidgets>=8
+
+# Scripts du site
+pyyaml>=6
+
+# Site et contrôle qualité
+jupyter-book>=2
+nbclient>=0.10
+ipykernel>=6
+pytest>=8

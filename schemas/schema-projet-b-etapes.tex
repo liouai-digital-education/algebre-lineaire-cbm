@@ -1,0 +1,13 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[etape/.style={boite, text width=3.5cm, minimum height=2.3cm, font=\small}]
+\node[etape] (B1) at (0,0) {\textbf{B1 Cadrer et mesurer}\\[3pt] que veut dire\\ « influent » ? degré,\\ voisins de voisins};
+\node[etape] (B2) at (4.5,0) {\textbf{B2 L'influence des influents}\\[3pt] vecteur propre, Katz,\\ PageRank, robustesse};
+\node[etape] (B3) at (9,0) {\textbf{B3 Propager, diviser}\\[3pt] simuler une rumeur,\\ prédire la scission\\ du club};
+\node[etape] (B4) at (13.5,0) {\textbf{B4 Généraliser}\\[3pt] trois réseaux, module\\ testé, argumentaire,\\ rapport};
+\draw[fleche, navy] (B1) -- (B2); \draw[fleche, navy] (B2) -- (B3); \draw[fleche, navy] (B3) -- (B4);
+\foreach \x/\m in {0/{M1, M3 (produits)}, 4.5/{M7, M4 (inverse)}, 9/{M7, M1}, 13.5/{tous}}{
+  \node[note] at (\x,-1.55) {\m};}
+\node[note] at (6.75,1.55) {un club de karaté, des familles florentines, les personnages des \emph{Misérables}};
+\end{tikzpicture}
+\end{document}

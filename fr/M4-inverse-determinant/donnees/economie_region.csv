@@ -1,0 +1,4 @@
+fournisseur,Agriculture,Industrie,Services,demande_finale
+Agriculture,0.10,0.15,0.02,50
+Industrie,0.20,0.30,0.10,120
+Services,0.10,0.20,0.25,200

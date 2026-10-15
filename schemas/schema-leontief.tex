@@ -1,0 +1,27 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[
+  secteur/.style={circle, draw=navy, line width=1pt, fill=vertclair, minimum size=2.1cm, align=center, font=\small},
+  flux/.style={fleche, vertfonce, line width=1pt},
+  coef/.style={font=\footnotesize, fill=white, inner sep=1.5pt}]
+\node[secteur] (ag) at (0,0) {Agriculture};
+\node[secteur] (in) at (5,0) {Industrie};
+\node[secteur] (se) at (2.5,-4) {Services};
+% fournitures : du fournisseur vers le client (coefficient a_ij : ce que j achète à i pour produire 1 €)
+\draw[flux] (ag) to[bend left=18] node[coef] {0,15} (in);
+\draw[flux] (in) to[bend left=18] node[coef] {0,20} (ag);
+\draw[flux] (in) to[bend left=18] node[coef] {0,10} (se);
+\draw[flux] (se) to[bend left=18] node[coef] {0,20} (in);
+\draw[flux] (se) to[bend left=18] node[coef] {0,10} (ag);
+\draw[flux] (ag) to[bend left=18] node[coef] {0,02} (se);
+% autoconsommation
+\draw[flux] (ag) to[out=150, in=210, looseness=5] node[coef, left] {0,10} (ag);
+\draw[flux] (in) to[out=30, in=-30, looseness=5] node[coef, right] {0,30} (in);
+\draw[flux] (se) to[out=-120, in=-60, looseness=5] node[coef, left] {0,25} (se);
+% demande finale : une flèche sortante par secteur
+\draw[fleche, navy, line width=1.3pt] (ag) -- (-2.4,1.6) node[left, font=\footnotesize] {$d_1$};
+\draw[fleche, navy, line width=1.3pt] (in) -- (7.4,1.6) node[right, font=\footnotesize] {$d_2$};
+\draw[fleche, navy, line width=1.3pt] (se) -- (5.6,-4.9) node[right, font=\footnotesize] {$d_3$};
+\node[note, align=left, anchor=west] at (-1.6,-7.4) {Flèches vertes : ce qu'un secteur fournit à un autre pour chaque euro produit\\ par le client (exemple : pour produire 1\,€, l'industrie achète 0,15\,€ à l'agriculture).\\ Flèches marine : la demande finale (ménages, exportations). Valeurs illustratives.};
+\end{tikzpicture}
+\end{document}

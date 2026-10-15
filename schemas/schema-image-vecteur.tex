@@ -1,0 +1,22 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[x=0.38cm, y=0.38cm]
+\def\img{{
+{0,0,5,13,9,1,0,0},{0,0,13,15,10,15,5,0},{0,3,15,2,0,11,8,0},{0,4,12,0,0,8,8,0},
+{0,5,8,0,0,9,8,0},{0,4,11,0,1,12,7,0},{0,2,14,5,10,12,0,0},{0,0,6,13,10,0,0,0}}}
+\foreach \i in {0,...,7}{\foreach \j in {0,...,7}{
+  \pgfmathsetmacro{\v}{\img[\i][\j]*100/16}
+  \fill[navy!\v!white] (\j,-\i) rectangle ++(1,-1);}}
+\draw[gris] (0,0) grid[step=1] (8,-8); \draw[navy, line width=0.8pt] (0,0) rectangle (8,-8);
+\node[note] at (4,-9) {image 8 $\times$ 8, gris de 0 à 16};
+\draw[fleche, navy] (9.2,-4) -- (12.2,-4) node[midway, above, font=\small] {aplatir};
+\foreach \k [count=\c from 0] in {0,0,5,13,9,1,0,0,0,0,13,15}{
+  \pgfmathsetmacro{\v}{\k*100/16}
+  \fill[navy!\v!white] (13+\c,-3.5) rectangle ++(1,-1);}
+\draw[gris] (13,-3.5) grid[step=1] (25,-4.5); \node at (26.3,-4) {$\cdots$};
+\draw[navy, line width=0.8pt] (13,-3.5) rectangle (25,-4.5);
+\node[note, align=center] at (19.5,-6.2) {un vecteur $\mathbf{x}$ de $\mathbb{R}^{64}$ :\\ la ligne 1, puis la ligne 2, \dots};
+\node[boite, anchor=west, align=left, font=\small] at (28.5,-4) {deux images se ressemblent\\ si leurs vecteurs sont proches :\\[3pt]
+$\lVert \mathbf{x} - \mathbf{y} \rVert$ petite, ou\\ $\cos(\mathbf{x}, \mathbf{y})$ proche de 1};
+\end{tikzpicture}
+\end{document}

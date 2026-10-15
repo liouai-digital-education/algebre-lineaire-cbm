@@ -1,0 +1,14 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[membre/.style={circle, draw=navy, line width=0.9pt, minimum size=0.55cm}]
+\foreach \n/\x/\y in {a/0/0, b/0.9/0.8, c/0.2/1.4, d/1.3/-0.3, e/-0.6/0.7}{\node[membre, fill=vertclair] (\n) at (\x,\y) {};}
+\foreach \n/\x/\y in {f/3.6/0.2, g/4.5/0.9, h/4.4/-0.4, i/5.2/0.3, j/3.8/1.3}{\node[membre, fill=jauneclair] (\n) at (\x,\y) {};}
+\foreach \u/\v in {a/b,a/c,b/c,a/d,b/d,a/e,c/e,f/g,f/h,g/i,h/i,f/j,g/j,i/h}{\draw[navy] (\u) -- (\v);}
+\draw[navy, densely dashed, line width=1.1pt] (d) -- (f); \draw[navy, densely dashed, line width=1.1pt] (b) -- (j);
+\draw[gristexte, dashed] (2.45,-1.0) -- (2.45,2.0);
+\node[note] at (0.4,-1.1) {$v_2 < 0$}; \node[note] at (4.4,-1.1) {$v_2 > 0$};
+\node[boite, anchor=west, align=left, font=\small] at (6.3,0.5) {laplacien : $L = D - A$\\ ($D$ : degrés sur la diagonale)\\[3pt]
+$\mathbf{x}^{\mathsf{T}} L\,\mathbf{x} = \sum_{\text{liens } ij} (x_i - x_j)^2$\\[3pt]
+le vecteur propre $\mathbf{v}_2$ de la deuxième\\ plus petite valeur propre change peu\\ le long des liens : son signe sépare\\ deux groupes peu reliés entre eux};
+\end{tikzpicture}
+\end{document}

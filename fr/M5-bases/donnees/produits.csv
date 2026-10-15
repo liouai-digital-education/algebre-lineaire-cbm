@@ -1,0 +1,43 @@
+produit,categorie,energie_kj,energie_kcal,lipides,acides_gras_satures,glucides,sucres,fibres,proteines,sel,sodium
+Pain de mie complet,boulangerie,1104,262,4.2,0.6,43.3,5.5,6.8,9.3,1.12,0.448
+Baguette tradition,boulangerie,1164,275,1.2,0.3,55.6,2.0,2.9,8.9,1.32,0.528
+Biscottes,boulangerie,1681,1681,6.4,0.9,70.7,6.2,4.6,12.1,1.19,0.478
+Croissant,boulangerie,1690,404,20.9,13.5,44.7,8.8,2.2,8.2,0.95,0.38
+Céréales chocolatées,petit-déjeuner,1624,384,3.9,1.4,76.4,29.0,5.2,8.2,0.46,0.185
+Muesli aux fruits,petit-déjeuner,1533,364,6.4,1.2,63.0,21.1,8.6,9.2,0.1,0.041
+Flocons d'avoine,petit-déjeuner,1597,379,7.1,1.4,60.5,1.2,10.2,13.2,0.03,0.011
+Pâte à tartiner,petit-déjeuner,2337,560,31.8,10.6,59.8,55.3,3.3,6.9,0.1,0.041
+Confiture de fraises,petit-déjeuner,1049,247,0.1,0.0,60.5,56.3,1.0,0.5,0.03,0.01
+Yaourt nature,produits laitiers,217,52,1.6,1.0,5.3,5.3,0.0,4.0,0.15,0.06
+Yaourt aux fruits,produits laitiers,418,99,3.0,1.8,14.7,14.2,0.3,3.2,0.13,0.052
+Fromage blanc 3 %,produits laitiers,307,73,3.2,2.1,4.2,4.0,0.0,6.9,0.1,0.039
+Emmental râpé,produits laitiers,1540,371,28.4,19.3,0.5,0.1,0.0,28.3,0.68,0.273
+Camembert,produits laitiers,1112,268,21.2,15.1,0.5,0.5,0.0,18.8,1.91,0.764
+Lait demi-écrémé,produits laitiers,186,44,1.5,1.0,4.6,4.6,0.0,3.1,0.1,0.041
+Beurre doux,produits laitiers,3104,755,83.3,50.3,0.6,0.6,0.0,0.7,0.03,0.01
+Jambon blanc,viandes et poissons,488,116,3.5,1.2,1.0,0.8,0.0,20.1,0.735,0.735
+Saucisson sec,viandes et poissons,1724,416,33.5,13.5,2.1,1.0,0.0,26.4,4.64,1.856
+Blanc de poulet,viandes et poissons,463,110,2.0,0.6,0.8,0.5,0.0,22.1,1.5,0.601
+Thon au naturel,viandes et poissons,464,110,1.1,0.3,0.0,0.0,0.0,24.9,1.05,0.421
+Sardines à l'huile,viandes et poissons,908,217,13.0,2.9,0.0,0.0,0.0,25.1,1.17,0.466
+Saumon fumé,viandes et poissons,800,192,11.1,2.1,0.5,0.5,0.0,22.4,2.98,1.191
+Pâtes sèches,épicerie,1463,345,1.8,0.4,68.0,3.6,2.8,12.8,0.01,0.004
+Riz basmati,épicerie,1552,366,0.8,0.2,80.2,0.3,1.4,8.7,0.01,0.004
+Lentilles vertes,épicerie,1442,342,1.5,0.2,50.0,1.6,17.3,23.4,0.03,0.01
+Pois chiches en conserve,épicerie,514,122,2.5,0.3,15.6,0.5,5.5,6.6,0.74,0.296
+Sauce tomate,épicerie,270,64,2.6,0.3,7.8,6.5,1.5,1.7,0.92,0.368
+Ketchup,épicerie,441,104,0.1,0.0,24.1,22.1,0.9,1.2,1.81,0.726
+Mayonnaise,épicerie,2865,697,76.2,6.0,1.5,1.2,0.0,1.2,1.41,0.563
+Huile d'olive,épicerie,3485,848,94.2,14.0,0.0,0.0,0.0,0.0,0.0,0.0
+Chips nature,snacks,2267,544,33.9,2.9,51.6,0.6,4.4,5.9,1.2,0.481
+Cacahuètes grillées salées,snacks,2475,598,48.3,7.4,12.4,4.4,7.6,24.5,0.98,0.393
+Biscuits sablés,snacks,1954,465,17.6,8.9,69.6,25.8,2.0,6.1,0.58,0.232
+Barre chocolat-caramel,snacks,1920,457,17.8,9.7,69.0,59.2,1.1,4.7,0.24,0.096
+Chocolat noir 70 %,snacks,2514,606,45.2,24.2,35.1,27.1,11.3,9.1,0.03,0.01
+Compote de pommes,fruits et légumes,278,66,0.1,0.0,15.0,13.4,1.8,0.3,0.03,0.01
+Pommes de terre,fruits et légumes,325,77,0.1,0.0,16.0,0.6,1.9,2.0,0.03,0.01
+Soupe de légumes,fruits et légumes,153,37,1.4,0.2,4.5,2.0,1.2,0.9,0.71,0.286
+Pizza margherita surgelée,plats préparés,1000,238,9.0,4.2,28.9,3.7,2.0,9.4,1.23,0.49
+Lasagnes bolognaise,plats préparés,612,146,6.9,3.3,12.9,2.4,1.0,7.6,0.93,0.37
+Taboulé,plats préparés,704,168,6.0,0.7,23.0,3.1,2.4,4.2,1.07,0.428
+Quiche lorraine,plats préparés,1140,274,17.6,7.8,19.3,2.0,1.0,9.0,1.07,0.428

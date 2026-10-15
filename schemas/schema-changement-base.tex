@@ -1,0 +1,31 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=0.85]
+% ---- Base canonique
+\begin{scope}
+\node[titre] at (2,4.4) {Dans la base $(\mathbf{e}_1, \mathbf{e}_2)$};
+\draw[gris!60, line width=0.4pt] (-0.5,-0.5) grid (4.5,3.6);
+\draw[vecteur, vertfonce] (0,0) -- (1,0) node[below=1pt] {$\mathbf{e}_1$};
+\draw[vecteur, vertfonce] (0,0) -- (0,1) node[left=1pt] {$\mathbf{e}_2$};
+\draw[vecteur, navy, line width=1.9pt] (0,0) -- (3,3) node[above right=-1pt] {$\mathbf{v}$};
+\draw[densely dashed, gristexte] (3,0) -- (3,3) -- (0,3);
+\node[note] at (2,-1.05) {$\mathbf{v} = 3\,\mathbf{e}_1 + 3\,\mathbf{e}_2$ : coordonnées $(3\,;\,3)$};
+\end{scope}
+% ---- Nouvelle base
+\begin{scope}[xshift=7.4cm]
+\node[titre] at (2,4.4) {Dans la base $(\mathbf{f}_1, \mathbf{f}_2)$};
+\begin{scope}[cm={2,0,1,1.5,(0,0)}]
+\clip (-0.6,-0.4) rectangle (2.2,2.5);
+\draw[jaune!70!white, line width=0.5pt] (-3,-3) grid (4,4);
+\end{scope}
+\draw[vecteur, vertfonce] (0,0) -- (2,0) node[below=1pt] {$\mathbf{f}_1$};
+\draw[vecteur, vertfonce] (0,0) -- (1,1.5) node[left=1pt] {$\mathbf{f}_2$};
+\draw[vecteur, navy, line width=1.9pt] (0,0) -- (3,3) node[above right=-1pt] {$\mathbf{v}$};
+\draw[densely dashed, gristexte] (1,0) -- (3,3);
+\draw[densely dashed, gristexte] (2,3) -- (3,3);
+\node[note] at (2,-1.05) {$\mathbf{v} = 0{,}5\,\mathbf{f}_1 + 2\,\mathbf{f}_2$ : coordonnées $(0{,}5\,;\,2)$};
+\end{scope}
+\node[font=\small, align=center] at (5.6,1.6) {même\\ vecteur};
+\draw[fleche, vertfonce] (4.8,1.0) -- (6.4,1.0);
+\end{tikzpicture}
+\end{document}

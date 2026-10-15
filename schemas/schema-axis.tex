@@ -1,0 +1,27 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[x=0.75cm, y=0.6cm]
+\newcommand{\grille}[2]{%
+  \foreach \i in {0,...,3} \foreach \j in {0,...,2}
+    \draw[gris, fill=fond] ({#1+\i}, {#2-\j}) rectangle ++(1,-1);}
+% --- axis=0 : on écrase les lignes, un total par colonne
+\node[titre] at (2, 2.2) {\texttt{D.sum(axis=0)}};
+\node[note] at (2, 1.3) {additionne en descendant};
+\grille{0}{0}
+\foreach \i in {0,...,3} \draw[fleche, vertfonce] (\i+0.5, -0.2) -- (\i+0.5, -2.8);
+\foreach \i in {0,...,3} \draw[draw=vertfonce, fill=vert] (\i, -3.6) rectangle ++(1,-1);
+\node[note, align=center] at (2, -5.4) {un total par colonne\\ (4 nombres : par catégorie)};
+\node[note, rotate=90] at (-0.6, -1.5) {mois};
+\node[note] at (2, 0.45) {4 catégories};
+% --- axis=1 : on écrase les colonnes, un total par ligne
+\begin{scope}[xshift=7.2cm]
+\node[titre] at (2.5, 2.2) {\texttt{D.sum(axis=1)}};
+\node[note] at (2.5, 1.3) {additionne le long de chaque ligne};
+\grille{0}{0}
+\foreach \j in {0,...,2} \draw[fleche, vertfonce] (0.2, -\j-0.5) -- (3.8, -\j-0.5);
+\foreach \j in {0,...,2} \draw[draw=vertfonce, fill=vert] (4.6, -\j) rectangle ++(1,-1);
+\node[note, align=center] at (2.8, -5.4) {un total par ligne\\ (12 nombres : par mois)};
+\node[note] at (2, 0.45) {4 catégories};
+\end{scope}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,17 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}
+\filldraw[fill=fond, draw=navy, line width=0.9pt] (0,0) rectangle (4.2,2.6);
+\node[font=\small, align=center] at (2.1,1.3) {écarts $E$\\ spectateurs $\times$ films\\ (en partie connus)};
+\node at (4.7,1.3) {$\approx$};
+\filldraw[fill=vertclair, draw=navy, line width=0.9pt] (5.2,0) rectangle (6.0,2.6); \node[font=\small] at (5.6,1.3) {$P$};
+\node[note, align=center, anchor=north] at (5.6,-0.1) {goûts\\ ($k$ nombres\\ par spectateur)};
+\filldraw[fill=jauneclair, draw=navy, line width=0.9pt] (6.4,1.8) rectangle (10.6,2.6); \node[font=\small] at (8.5,2.2) {$Q^{\mathsf{T}}$};
+\node[note, align=center] at (8.5,1.25) {profils ($k$ nombres par film)};
+\node[boite, anchor=west, align=left, font=\small] at (11.2,1.3) {$\hat r_{uf} = \mu + b_u + b_f + \mathbf{p}_u \cdot \mathbf{q}_f$\\[4pt]
+moindres carrés alternés :\\
+1. $Q$ fixé : chaque $\mathbf{p}_u$ par moindres carrés\\
+2. $P$ fixé : chaque $\mathbf{q}_f$ par moindres carrés\\
+3. recommencer};
+\end{tikzpicture}
+\end{document}

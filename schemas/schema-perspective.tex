@@ -1,0 +1,24 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=1.0]
+% axe optique
+\draw[gris, densely dashed] (-0.3,0) -- (9.2,0) node[note, below left] {axe de visée};
+% oeil
+\fill[navy] (0,0) circle (2.2pt) node[below left] {œil};
+% écran
+\draw[vertfonce, line width=1.8pt] (2.5,-1.6) -- (2.5,2.2) node[above, text=vertfonce, font=\footnotesize] {écran};
+% objet
+\coordinate (P) at (8,1.9);
+\draw[navy, line width=1.4pt] (8,0) -- node[left, text=navy] {$x$} (P);
+\fill[navy] (P) circle (2pt) node[right] {point $(x\,;\,z)$};
+% rayon
+\draw[jaune, line width=1.3pt] (0,0) -- (P);
+\coordinate (Pp) at (2.5,{1.9*2.5/8});
+\fill[vertfonce] (Pp) circle (2pt) node[above left=1pt, text=vertfonce] {$x'$};
+\draw[vertfonce, line width=1.1pt] (2.5,0) -- (Pp);
+% cotes
+\draw[<->, >=Stealth, gristexte] (0,-0.9) -- node[below, note] {$f$} (2.5,-0.9);
+\draw[<->, >=Stealth, gristexte] (0,-1.5) -- node[below, note] {$z$ (profondeur)} (8,-1.5);
+\node[font=\small, align=left, anchor=west] at (4.2,2.75) {triangles semblables : $\dfrac{x'}{f} = \dfrac{x}{z}$, \ donc \ $x' = \dfrac{f\,x}{z}$};
+\end{tikzpicture}
+\end{document}

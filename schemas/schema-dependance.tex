@@ -1,0 +1,24 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[x={(1cm,0cm)}, y={(0.5cm,0.38cm)}, z={(0cm,1cm)}, scale=1.15]
+% ---- dépendants
+\begin{scope}
+\node[titre] at (1.5,0,3.4) {liés : rang 2};
+\filldraw[fill=vertclair, draw=vertfonce, line width=0.7pt, fill opacity=0.9] (-0.3,-0.3,0) -- (3.3,-0.3,0) -- (3.3,3.3,0) -- (-0.3,3.3,0) -- cycle;
+\draw[vecteur, navy] (0,0,0) -- (2.5,0,0) node[below] {$\mathbf{u}$};
+\draw[vecteur, navy] (0,0,0) -- (0.5,2.6,0) node[above left=-1pt] {$\mathbf{v}$};
+\draw[vecteur, jaune!80!navy, line width=1.6pt] (0,0,0) -- (3,2.6,0) node[right] {$\mathbf{w} = \mathbf{u} + \mathbf{v}$};
+\node[note, align=center] at (1.5,0,-1.0) {$\mathbf{w}$ reste dans le plan de $\mathbf{u}$ et $\mathbf{v}$ :\\ il n'apporte aucune direction nouvelle};
+\end{scope}
+% ---- indépendants
+\begin{scope}[xshift=7.6cm]
+\node[titre] at (1.5,0,3.4) {indépendants : rang 3};
+\filldraw[fill=vertclair, draw=vertfonce, line width=0.7pt, fill opacity=0.9] (-0.3,-0.3,0) -- (3.3,-0.3,0) -- (3.3,3.3,0) -- (-0.3,3.3,0) -- cycle;
+\draw[vecteur, navy] (0,0,0) -- (2.5,0,0) node[below] {$\mathbf{u}$};
+\draw[vecteur, navy] (0,0,0) -- (0.5,2.6,0) node[above left=-1pt] {$\mathbf{v}$};
+\draw[densely dotted, gristexte] (1.2,1.4,0) -- (1.2,1.4,2.2);
+\draw[vecteur, jaune!80!navy, line width=1.6pt] (0,0,0) -- (1.2,1.4,2.2) node[above] {$\mathbf{w}$};
+\node[note, align=center] at (1.5,0,-1.0) {$\mathbf{w}$ sort du plan :\\ trois directions, tout l'espace est atteint};
+\end{scope}
+\end{tikzpicture}
+\end{document}

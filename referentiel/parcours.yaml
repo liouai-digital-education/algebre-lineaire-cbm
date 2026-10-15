@@ -1,0 +1,395 @@
+# Structure du parcours : modules, activités, prérequis.
+# Source unique utilisée par scripts/generer_squelettes.py et scripts/parcours.py.
+# statut : "rédigé" ou "à rédiger" (une activité peut surcharger le statut de son module).
+
+modules:
+  M0:
+    titre: Python et NumPy comme outils
+    question: Comment faire calculer une machine ?
+    objectif: Savoir s'auto-former à un outil nouveau, en lisant la documentation et en déboguant.
+    dossier: M0-outils
+    prerequis: []
+    duree_h: 6
+    statut: rédigé
+    activites:
+      - id: "0.1"
+        fichier: 0.1-faire-calculer
+        titre: Faire calculer la machine
+        resume: Variables, listes, boucles, puis passage aux tableaux NumPy sur un budget mensuel.
+        codes: [Ti, Ta, MC1, IN1]
+      - id: "0.2"
+        fichier: 0.2-apprendre-seul
+        titre: Apprendre seul une fonction
+        resume: Utiliser np.where, np.cumsum et np.linspace à partir de la seule documentation.
+        codes: [CPk, MC2, Ta]
+      - id: "0.3"
+        fichier: 0.3-erreurs-de-forme
+        titre: Les erreurs de forme
+        resume: Un notebook volontairement cassé, avec des erreurs de dimensions à isoler et corriger.
+        codes: [MC6, MC7, MC4]
+      - id: M0-projet
+        fichier: M0-projet-panier
+        titre: "Mini-projet : le panier de courses vectorisé"
+        resume: Quantités × prix pour 4 magasins, choisir le moins cher, puis ajouter un magasin sans réécrire le code.
+        codes: [DQf, DQa, MC5, GMv, IN2]
+        projet: true
+
+  M1:
+    titre: Vecteurs et ressemblance
+    question: Comment mesurer la ressemblance ?
+    objectif: Représenter des objets du monde comme vecteurs et choisir une mesure de ressemblance adaptée.
+    dossier: M1-vecteurs
+    prerequis: [M0]
+    duree_h: 7
+    statut: rédigé
+    activites:
+      - id: "1.1"
+        fichier: 1.1-forces-deplacements
+        titre: Forces et déplacements
+        resume: Vecteurs du plan, somme, multiplication par un scalaire, norme ; tracés Matplotlib.
+        codes: [C1, CCv, IN3, IFe]
+      - id: "1.2"
+        fichier: 1.2-melanger-lumieres
+        titre: Mélanger des lumières
+        resume: Combinaisons linéaires de couleurs RGB ; quelles couleurs peut-on obtenir avec 3 projecteurs ?
+        codes: [ACc, C2, IN3, GMi]
+      - id: "1.3"
+        fichier: 1.3-distance-ou-angle
+        titre: Distance ou angle ?
+        resume: Comparer des profils avec la distance euclidienne puis la similarité cosinus ; trouver un cas où elles se contredisent.
+        codes: [Tr, Tc, CVa, IN4]
+      - id: M1-projet
+        fichier: M1-projet-recettes
+        titre: "Mini-projet : recommander une recette"
+        resume: Chaque recette est un vecteur d'ingrédients ; recommander les 3 plus proches et critiquer le choix de la mesure.
+        codes: [DQf, DQa, CVa, CVt, IN2, GMv]
+        projet: true
+
+  M2:
+    titre: Systèmes linéaires
+    question: Comment résoudre plusieurs contraintes à la fois ?
+    objectif: Traduire des contraintes réelles en système, choisir une méthode de résolution et interpréter les cas sans solution ou à infinité de solutions.
+    dossier: M2-systemes
+    prerequis: [M1]
+    duree_h: 9
+    statut: rédigé
+    activites:
+      - id: "2.1"
+        fichier: 2.1-mettre-en-equations
+        titre: Mettre en équations
+        resume: Mélanges d'alliages, équilibrage de réactions chimiques, circuits électriques ; identifier inconnues et contraintes.
+        codes: [DQq, DQa, ACa, IFe, CVt]
+      - id: "2.2"
+        fichier: 2.2-pivot-de-gauss
+        titre: Le pivot de Gauss à la main puis à la machine
+        resume: 3×3 à la main, vérification avec sympy.Matrix.rref, puis numpy.linalg.solve.
+        codes: [Tb, Tc, Tr, CVt, MC8]
+      - id: "2.3"
+        fichier: 2.3-nombre-de-solutions
+        titre: Zéro, une ou une infinité de solutions
+        resume: Interpréter géométriquement (droites, plans) et dans le contexte.
+        codes: [IN2, IN3, C2, CVa, IFe]
+      - id: "2.4"
+        fichier: 2.4-quand-l-ordinateur-se-trompe
+        titre: Quand l'ordinateur se trompe
+        resume: Système presque singulier, erreurs d'arrondi, nombre de conditionnement.
+        codes: [CVc, MC3, CVe, IFr, MC4]
+      - id: M2-projet
+        fichier: M2-projet-trafic
+        titre: "Mini-projet : équilibrer le trafic d'un quartier"
+        resume: Flux de voitures dans un réseau de rues à sens unique ; paramétrer la solution, détecter les flux impossibles.
+        codes: [DQa, DQq, ACd, Tb, MC6, IN2, CVa, GMv]
+        projet: true
+
+  M3:
+    titre: Matrices et transformations
+    question: Comment déformer une image ?
+    objectif: Voir une matrice comme une action sur l'espace, et le produit comme une composition d'actions.
+    dossier: M3-transformations
+    prerequis: [M2]
+    duree_h: 8
+    statut: rédigé
+    activites:
+      - id: "3.1"
+        fichier: 3.1-deformer-une-grille
+        titre: Déformer une grille
+        resume: Rotation, homothétie, cisaillement, projection appliquées à une grille et à une image.
+        codes: [C1, CCv, IN3, IFe, Ta]
+      - id: "3.2"
+        fichier: 3.2-l-ordre-compte
+        titre: L'ordre compte
+        resume: Composer deux transformations, constater que AB ≠ BA.
+        codes: [Tb, IN4, CVt, GMi]
+      - id: "3.3"
+        fichier: 3.3-coordonnees-homogenes
+        titre: Translater avec une matrice
+        resume: Coordonnées homogènes ; pourquoi l'astuce d'une dimension supplémentaire fonctionne.
+        codes: [ACa, GMi, C2, MC5]
+      - id: M3-projet
+        fichier: M3-projet-moteur-3d
+        titre: "Mini-projet : mini-moteur 3D fil de fer"
+        resume: Afficher un cube qui tourne, avec curseurs pour les angles et la perspective.
+        codes: [MC5, GMv, CCv, DQa, CVa, GMg]
+        projet: true
+
+  M4:
+    titre: Inverse, déterminant, rang
+    question: Quand peut-on revenir en arrière ?
+    objectif: Savoir quand une transformation est réversible et à quel point le calcul est fiable.
+    dossier: M4-inverse-determinant
+    prerequis: [M2]
+    duree_h: 8
+    statut: rédigé
+    activites:
+      - id: "4.1"
+        fichier: 4.1-determinant-et-aire
+        titre: Le déterminant comme facteur d'aire
+        resume: Mesurer l'aire d'un carré transformé, relier au signe et à l'orientation.
+        codes: [C1, IN3, IFe, CCv, Tb]
+      - id: "4.2"
+        fichier: 4.2-chiffre-de-hill
+        titre: Chiffrer et déchiffrer
+        resume: Chiffre de Hill modulo 26 ; pourquoi certaines clés sont inutilisables.
+        codes: [C2, CVm, DQa, MC5, IN2]
+      - id: "4.3"
+        fichier: 4.3-presque-singuliere
+        titre: Presque singulière
+        resume: Déflouer un code-barres en inversant le flou ; pourquoi le bruit explose, et comment le dompter.
+        codes: [CVc, MC4, IFr, MC3, CVd]
+      - id: M4-projet
+        fichier: M4-projet-leontief
+        titre: "Mini-projet : modèle de Leontief"
+        resume: Économie à 3 à 5 secteurs ; quelle production pour satisfaire une demande finale ? Sensibilité aux coefficients.
+        codes: [DQf, CVa, IN5, MC5, CVt, CCd]
+        projet: true
+
+  M5:
+    titre: Espaces vectoriels et bases
+    question: Quelle information est redondante ?
+    objectif: Reconnaître la même structure dans des situations différentes et choisir la base la plus utile.
+    dossier: M5-bases
+    prerequis: [M4]
+    duree_h: 8
+    statut: rédigé
+    activites:
+      - id: "5.1"
+        fichier: 5.1-changer-de-base-couleurs
+        titre: Changer de base de couleurs
+        resume: RGB vers YCbCr ; ce que gagne la compression JPEG.
+        codes: [GMi, ACr, C1, IN3, CCv]
+      - id: "5.2"
+        fichier: 5.2-variables-redondantes
+        titre: Variables redondantes
+        resume: Indépendance linéaire, rang, noyau sur un jeu de données avec colonnes dépendantes.
+        codes: [C2, IN3, ACc, CVt, IFe]
+      - id: "5.3"
+        fichier: 5.3-polynomes-vecteurs
+        titre: Les polynômes sont des vecteurs
+        resume: Interpolation dans la base canonique puis dans la base de Lagrange ; comparer la stabilité.
+        codes: [GMi, Tr, C4, CVc, MC4]
+      - id: M5-projet
+        fichier: M5-projet-redondance
+        titre: "Mini-projet : détecter la redondance"
+        resume: Retrouver les relations cachées entre les colonnes d'un tableau de valeurs nutritionnelles.
+        codes: [IFf, CVe, CCd, DQa, MC5, IN2, CVt]
+        projet: true
+
+  M6:
+    titre: Orthogonalité et moindres carrés
+    question: Quelle droite résume le mieux des données imparfaites ?
+    objectif: Trouver le meilleur compromis quand un système n'a pas de solution exacte, et mesurer la fiabilité du modèle.
+    dossier: M6-moindres-carres
+    prerequis: [M5]
+    duree_h: 9
+    statut: rédigé
+    activites:
+      - id: "6.1"
+        fichier: 6.1-projeter
+        titre: Projeter
+        resume: Projection orthogonale sur une droite puis un plan, interprétation comme « point le plus proche ».
+        codes: [C1, CCv, ACc, CVt, IN2]
+      - id: "6.2"
+        fichier: 6.2-la-meilleure-droite
+        titre: La meilleure droite
+        resume: Moindres carrés sur des données réelles bruitées ; estimer la pente avant de calculer.
+        codes: [IFe, IN2, DQa, CVe, IN4]
+      - id: "6.3"
+        fichier: 6.3-trois-outils
+        titre: Trois outils, un problème
+        resume: Équations normales, np.linalg.lstsq, décomposition QR ; comparer précision et stabilité.
+        codes: [Tr, Tc, CVc, C3, CVt]
+      - id: "6.4"
+        fichier: 6.4-valider-un-modele
+        titre: Valider un modèle
+        resume: Séparer données d'apprentissage et de test, analyser les résidus.
+        codes: [CVt, CVe, IFr, MC5, DQa]
+      - id: M6-projet
+        fichier: M6-projet-co2
+        titre: "Mini-projet : la courbe du CO₂ atmosphérique"
+        resume: Modéliser tendance et saisonnalité de la série de Mauna Loa, prévoir, quantifier l'incertitude.
+        codes: [IFr, CVt, IN5, CCr, MC5, DQa, CVe]
+        projet: true
+
+  M7:
+    titre: Valeurs propres et dynamique
+    question: Où va un système à long terme ?
+    objectif: Prévoir le comportement à long terme d'un système qui évolue par étapes.
+    dossier: M7-valeurs-propres
+    prerequis: [M5]
+    duree_h: 9
+    statut: rédigé
+    activites:
+      - id: "7.1"
+        fichier: 7.1-directions-invariantes
+        titre: Les directions qui ne tournent pas
+        resume: Explorer les vecteurs propres d'une matrice 2×2, avec un curseur puis par le calcul.
+        codes: [C1, Tb, CCv, IFe, CVt]
+      - id: "7.2"
+        fichier: 7.2-population-leslie
+        titre: Population structurée par âge
+        resume: Matrice de Leslie, taux de croissance à long terme, répartition stable.
+        codes: [IN3, IN4, DQa, IN2, GMv]
+      - id: "7.3"
+        fichier: 7.3-chaines-de-markov
+        titre: Chaînes de Markov
+        resume: Météo, fidélité à une marque ; état stationnaire.
+        codes: [ACc, GMw, C2, IFe, IN2]
+      - id: "7.4"
+        fichier: 7.4-methode-de-la-puissance
+        titre: La méthode de la puissance
+        resume: Vecteur propre dominant d'une grande matrice sans diagonaliser ; coût et vitesse.
+        codes: [MC8, MC7, Tr, Tb, CVt]
+      - id: M7-projet
+        fichier: M7-projet-pagerank
+        titre: "Mini-projet : PageRank d'un mini-web"
+        resume: Graphe de liens de 20 pages, classement, effet du facteur d'amortissement.
+        codes: [GMv, IN4, CVa, MC5, CCd, IFr]
+        projet: true
+
+  M8:
+    titre: Décomposition en valeurs singulières et données
+    question: Comment garder l'essentiel d'une donnée ?
+    objectif: Extraire la structure essentielle d'une grande matrice de données.
+    dossier: M8-svd
+    prerequis: [M6]
+    duree_h: 8
+    statut: rédigé
+    activites:
+      - id: "8.1"
+        fichier: 8.1-ce-que-fait-la-svd
+        titre: Ce que fait la SVD
+        resume: Décomposer une transformation en rotation, étirement, rotation.
+        codes: [C1, CCv, Tb, CVt, IFe]
+      - id: "8.2"
+        fichier: 8.2-rang-faible
+        titre: Approximation de rang faible
+        resume: Garder k valeurs singulières, mesurer l'erreur.
+        codes: [IN3, CVd, IFe, Tb, CVc]
+      - id: "8.3"
+        fichier: 8.3-acp
+        titre: Analyse en composantes principales
+        resume: Réduire un jeu de données à 2 dimensions et l'interpréter.
+        codes: [IN2, IN4, CCb, ACc, DQa]
+      - id: "8.4"
+        fichier: 8.4-quand-l-acp-trompe
+        titre: Quand l'ACP trompe
+        resume: Données non linéaires, variables non centrées-réduites.
+        codes: [IFf, CVm, C2, CVa, IFr]
+      - id: M8-projet
+        fichier: M8-projet-compression
+        titre: "Mini-projet : compresser une image"
+        resume: Choisir k selon un critère d'erreur, comparer au JPEG, empaqueter la fonction avec tests.
+        codes: [GMg, CVd, MC7, Tr, MC5, CCd]
+        projet: true
+
+projets_integrateurs:
+  A:
+    titre: Recommandation de films
+    question: Quels films proposer à un spectateur qu'on connaît peu ?
+    donnees: MovieLens (version réduite, environ 100 000 notes)
+    fichier: A-recommandation-films
+    modules: [M1, M5, M6, M8]
+    codes: [CPm, DQm, GMg, CVt, CCr]
+    statut: rédigé
+    dossier: projets/A-recommandation-films
+    etapes:
+      - id: A1
+        fichier: A1-cadrer-et-explorer
+        titre: Cadrer et explorer
+        resume: Découper la question, explorer les notes, construire un modèle de référence par moindres carrés.
+        codes: [CPm, DQm, DQq, DQa, IFe]
+      - id: A2
+        fichier: A2-ressemblances
+        titre: Des films qui se ressemblent
+        resume: Similarité cosinus entre films, prédiction par les plus proches voisins.
+        codes: [CPt, ACc, CVt, IN4]
+      - id: A3
+        fichier: A3-facteurs-latents
+        titre: Facteurs latents
+        resume: Approximation de rang faible d'une matrice incomplète, SVD puis moindres carrés alternés.
+        codes: [MC5, GMv, CVd, Tr]
+      - id: A4
+        fichier: A4-evaluer-et-livrer
+        titre: Évaluer, généraliser, communiquer
+        resume: Test final, nouveaux spectateurs, recommandations, module Python testé, rapport.
+        codes: [GMg, CVt, CVe, CCr]
+  B:
+    titre: Influence dans un réseau social
+    question: Qui sont les membres les plus influents d'un réseau, et selon quel critère ?
+    donnees: Réseau réel public (club de karaté de Zachary, réseaux SNAP)
+    fichier: B-influence-reseau
+    modules: [M1, M4, M7]
+    codes: [IFp, CVa, CCf, IN5, GMw]
+    statut: rédigé
+    dossier: projets/B-influence-reseau
+    etapes:
+      - id: B1
+        fichier: B1-cadrer-et-mesurer
+        titre: Cadrer et mesurer
+        resume: Préciser ce qu'« influent » veut dire, matrice d'adjacence, degré, voisins de voisins.
+        codes: [CPm, DQq, DQa, ACc, CVr]
+      - id: B2
+        fichier: B2-influence-recursive
+        titre: L'influence des influents
+        resume: Centralité de vecteur propre, centralité de Katz et PageRank ; sensibilité aux réglages et aux données.
+        codes: [CVa, GMv, Tr, IN4, CVl]
+      - id: B3
+        fichier: B3-propager-et-diviser
+        titre: Propager une rumeur, prédire une scission
+        resume: Simuler une propagation pour juger les centralités, prédire la scission du club par le vecteur de Fiedler.
+        codes: [IFp, CVt, IN5, MC5, IFu]
+      - id: B4
+        fichier: B4-generaliser-et-convaincre
+        titre: Généraliser et convaincre
+        resume: Trois réseaux, un module Python testé, des conclusions générales, un argumentaire et un rapport.
+        codes: [GMw, GMg, CCf, CCr, CCc]
+  C:
+    titre: Reconnaître des chiffres manuscrits
+    question: Peut-on reconnaître un chiffre écrit à la main sans réseau de neurones ?
+    donnees: Jeu digits de scikit-learn (1 797 images 8×8)
+    fichier: C-chiffres-manuscrits
+    modules: [M1, M5, M6, M8]
+    codes: [ACr, Tr, CVe, CVd, MC8]
+    statut: rédigé
+    dossier: projets/C-chiffres-manuscrits
+    etapes:
+      - id: C1
+        fichier: C1-cadrer-et-explorer
+        titre: Une image est un vecteur
+        resume: Découper le problème, voir les images comme des vecteurs, un premier classifieur par le chiffre moyen.
+        codes: [CPm, DQq, CPa, IFe, ACp]
+      - id: C2
+        fichier: C2-plus-proches-voisins
+        titre: Les plus proches voisins
+        resume: Distance ou cosinus, nombre de voisins, calcul vectorisé et coût.
+        codes: [Tr, MC8, Tb, CVt, C2]
+      - id: C3
+        fichier: C3-sous-espaces
+        titre: Un sous-espace par chiffre
+        resume: Une base de chiffres propres par la SVD, classer par la plus petite erreur de projection.
+        codes: [ACr, GMv, CVd, MC3]
+      - id: C4
+        fichier: C4-evaluer-et-livrer
+        titre: Évaluer, éprouver, communiquer
+        resume: Test final, erreurs systématiques et aléatoires, robustesse, module testé, rapport, présentation orale et relecture croisée.
+        codes: [CVe, GMg, CCr, CCp, CPi, CCi]

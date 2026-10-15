@@ -1,0 +1,284 @@
+/* =====================================================================
+   Liouaï — surcouche du thème « book-theme » de Jupyter Book 2 (MyST)
+   Chargée par site.options.style dans myst.yml.
+
+   Palette (tirée du logo Liouaï Digital Education) :
+     --navy       #243743  texte principal, titres
+     --green      #28B78D  couleur de marque (décor, barres, aplats)
+     --green-ink  #167A5C  vert lisible pour le texte et les liens (contraste 5,3:1)
+     --grey       #A1A9AE  décor
+     --yellow     #FFEE59  mises en avant (toujours avec texte navy)
+   Typographies : Poppins (titres), Roboto (texte).
+   ===================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+:root {
+  --navy: #243743;
+  --navy-2: #2F4654;
+  --green: #28B78D;
+  --green-ink: #167A5C;
+  --green-dark: #105A44;
+  --green-tint: #EAF7F2;
+  --grey: #A1A9AE;
+  --grey-ink: #5C6870;
+  --grey-tint: #F3F5F6;
+  --line: #E1E6E9;
+  --yellow: #FFEE59;
+  --yellow-tint: #FFFBD6;
+  --radius: 10px;
+  --font-head: "Poppins", "Roboto", system-ui, sans-serif;
+  --font-body: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: var(--font-body);
+  color: var(--navy);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-head);
+  color: var(--navy);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+article a,
+article a:visited { color: var(--green-ink); text-decoration-color: rgba(22, 122, 92, .35); }
+article a:hover { color: var(--green-dark); text-decoration-color: currentColor; }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+::selection { background: var(--green); color: #fff; }
+strong { color: var(--navy); }
+
+/* Texte du logo dans l'en-tête */
+header a span, header a div { font-family: var(--font-head); }
+
+/* ---------- Mise en page : colonne centrale élargie ----------
+   Le thème limite le texte à 6 colonnes de 10ch au plus (environ 720 px).
+   On garde à gauche la place de la table des matières (même grille que le thème)
+   et l'on porte les colonnes du texte à 12ch puis 13ch (environ 860 puis 930 px),
+   en resserrant un peu la marge de droite (plan de la page, notes en marge). */
+@media (min-width: 1024px) {
+  html .article-grid {
+    grid-template-columns:
+      [screen-start] .25rem [screen-inset-start page-start] 1rem [page-inset-start body-outset-start] 1fr
+      [body-start gutter-left-start] 1rem [body-inset-start] minmax(8ch, 12ch) [middle-start] minmax(8ch, 12ch)
+      [gutter-left-end] minmax(8ch, 12ch) minmax(8ch, 12ch) [gutter-right-start] minmax(8ch, 12ch)
+      [middle-end] minmax(8ch, 12ch) [body-inset-end] 1rem [body-end gutter-right-end] 2rem
+      [body-outset-end] minmax(5rem, 11rem) [page-inset-end] 1rem [page-end] 1fr [screen-inset-end] .25rem [screen-end];
+  }
+}
+@media (min-width: 1280px) {
+  /* la table des matières de gauche utilise la même grille (classe xl:article-grid) */
+  html .article-grid,
+  html .xl\:article-grid {
+    grid-template-columns:
+      [screen-start] .5rem [screen-inset-start] 1fr [page-start] 3rem [page-inset-start] minmax(4rem, 9rem)
+      [body-outset-start] 3rem [body-start gutter-left-start] 1rem [body-inset-start] minmax(8ch, 13ch)
+      [middle-start] minmax(8ch, 13ch) [gutter-left-end] minmax(8ch, 13ch) minmax(8ch, 13ch)
+      [gutter-right-start] minmax(8ch, 13ch) [middle-end] minmax(8ch, 13ch) [body-inset-end] 1rem
+      [body-end gutter-right-end] 2rem [body-outset-end] minmax(5rem, 11rem) [page-inset-end] 1rem
+      [page-end] 1fr [screen-inset-end] .5rem [screen-end];
+  }
+}
+
+/* ---------- Tableaux ---------- */
+article table { border-collapse: collapse; font-size: .95rem; }
+article table th {
+  background: var(--grey-tint);
+  color: var(--navy);
+  font-family: var(--font-head);
+  font-weight: 600;
+  border-bottom: 2px solid var(--green);
+}
+article table td, article table th { border-color: var(--line); }
+article table tr:hover td { background: var(--green-tint); }
+
+/* ---------- Code ---------- */
+article code { color: var(--navy); }
+article pre { border-radius: var(--radius); }
+
+/* ---------- Encadrés (admonitions) ---------- */
+.myst-admonition { border-radius: 0 var(--radius) var(--radius) 0; box-shadow: none !important; }
+.myst-admonition-header { font-family: var(--font-head); }
+
+/* note, important, seealso, admonition générique : vert Liouaï */
+.myst-admonition-note,
+.myst-admonition-important,
+.myst-admonition-seealso,
+.myst-admonition-admonition,
+.myst-admonition-tip,
+.myst-admonition-hint { border-left-color: var(--green) !important; }
+.myst-admonition-note .myst-admonition-header,
+.myst-admonition-important .myst-admonition-header,
+.myst-admonition-seealso .myst-admonition-header,
+.myst-admonition-admonition .myst-admonition-header,
+.myst-admonition-tip .myst-admonition-header,
+.myst-admonition-hint .myst-admonition-header { background: var(--green-tint) !important; color: var(--navy) !important; }
+.myst-admonition-note .myst-admonition-header-icon,
+.myst-admonition-important .myst-admonition-header-icon,
+.myst-admonition-seealso .myst-admonition-header-icon,
+.myst-admonition-admonition .myst-admonition-header-icon,
+.myst-admonition-tip .myst-admonition-header-icon,
+.myst-admonition-hint .myst-admonition-header-icon { color: var(--green-ink) !important; }
+
+/* warning, attention, caution : jaune Liouaï, texte navy */
+.myst-admonition-warning,
+.myst-admonition-attention,
+.myst-admonition-caution { border-left-color: #E5C800 !important; }
+.myst-admonition-warning .myst-admonition-header,
+.myst-admonition-attention .myst-admonition-header,
+.myst-admonition-caution .myst-admonition-header { background: var(--yellow-tint) !important; color: var(--navy) !important; }
+.myst-admonition-warning .myst-admonition-header-icon,
+.myst-admonition-attention .myst-admonition-header-icon,
+.myst-admonition-caution .myst-admonition-header-icon { color: #8A7700 !important; }
+
+/* ---------- Accueil : bandeau ---------- */
+.liouai-hero {
+  background: linear-gradient(180deg, var(--grey-tint), #fff);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.75rem 1.25rem;
+  margin: 1rem 0 2rem;
+}
+.liouai-hero p:first-child {
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--green-ink);
+  margin: 0 0 .25rem;
+}
+.liouai-hero img { max-width: 180px; float: right; margin: 0 0 1rem 1.5rem; }
+.liouai-hero::after { content: ""; display: block; clear: both; }
+@media (max-width: 640px) {
+  .liouai-hero img { float: none; display: block; margin: 0 auto 1rem; max-width: 140px; }
+}
+
+/* Liens en forme de boutons */
+.liouai-actions p { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.25rem 0 0; }
+.liouai-actions a {
+  display: inline-block;
+  border-radius: 30px;
+  padding: .55rem 1.3rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  border: 2px solid var(--navy);
+  color: var(--navy) !important;
+}
+.liouai-actions a:first-child { background: var(--green-ink); border-color: var(--green-ink); color: #fff !important; }
+.liouai-actions a:first-child:hover { background: var(--green-dark); border-color: var(--green-dark); }
+.liouai-actions a:not(:first-child):hover { background: var(--navy); color: #fff !important; }
+
+/* ---------- Parcours : pile verticale des modules ---------- */
+.liouai-parcours {
+  counter-reset: etape -1;   /* la première étape est M0 */
+  position: relative;
+  margin: 1.5rem 0 2rem;
+  padding-left: 3.25rem;
+}
+/* le fil vertical qui relie les étapes */
+.liouai-parcours::before {
+  content: "";
+  position: absolute;
+  left: 1.2rem;
+  top: 1.4rem;
+  bottom: 1.4rem;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--green), var(--green-ink));
+}
+.liouai-etape {
+  position: relative;
+  counter-increment: etape;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius);
+  padding: .85rem 1.25rem .8rem;
+  margin: 0 0 .9rem;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+/* la pastille numérotée posée sur le fil */
+.liouai-etape::before {
+  content: "M" counter(etape, decimal);
+  position: absolute;
+  left: -3.25rem;
+  top: .8rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: .85rem;
+  color: #fff;
+  background: var(--green-ink);
+  box-shadow: 0 0 0 4px #fff;
+}
+.liouai-etape p { margin: .2rem 0; }
+.liouai-etape > p:first-child { font-family: var(--font-head); font-size: 1.05rem; }
+.liouai-etape a { text-decoration: none !important; color: var(--navy) !important; }
+/* toute l'étape est cliquable */
+.liouai-etape > p:first-child a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+.liouai-etape:hover {
+  border-color: var(--green);
+  box-shadow: 0 6px 18px rgba(36, 55, 67, .08);
+  transform: translateX(3px);
+}
+.liouai-etape:hover > p:first-child a { color: var(--green-ink) !important; }
+.liouai-etape-meta p {
+  font-size: .85rem;
+  color: var(--grey-ink);
+  margin-top: .35rem;
+}
+/* les projets : dernière étape, mise en avant en jaune */
+.liouai-etape-projets { border-left-color: #E5C800; background: var(--yellow-tint); }
+.liouai-etape-projets::before { content: "★"; background: var(--yellow); color: var(--navy); font-size: 1.1rem; }
+@media (max-width: 640px) {
+  .liouai-parcours { padding-left: 2.4rem; }
+  .liouai-parcours::before { left: .85rem; }
+  .liouai-etape::before { left: -2.4rem; width: 1.9rem; height: 1.9rem; font-size: .7rem; }
+}
+
+/* ---------- Mode sombre ---------- */
+html.dark body { color: #E8EEF1; }
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6,
+html.dark strong, html.dark article code { color: #F3F5F6; }
+html.dark article a, html.dark article a:visited { color: var(--green); }
+html.dark article a:hover { color: #6FD3B4; }
+html.dark article table th { background: #2F4654; color: #F3F5F6; }
+html.dark article table tr:hover td { background: rgba(40, 183, 141, .12); }
+html.dark .myst-admonition .myst-admonition-header { background: #2F4654 !important; color: #F3F5F6 !important; }
+html.dark .liouai-hero { background: #1C2C36; border-color: #2F4654; }
+html.dark .liouai-hero p:first-child { color: var(--green); }
+html.dark .liouai-actions a { border-color: #E8EEF1; color: #E8EEF1 !important; }
+html.dark .liouai-actions a:first-child { background: var(--green-ink); border-color: var(--green-ink); color: #fff !important; }
+html.dark .liouai-etape { background: #1C2C36; border-color: #2F4654; border-left-color: var(--green); }
+html.dark .liouai-etape a { color: #F3F5F6 !important; }
+html.dark .liouai-etape:hover > p:first-child a { color: var(--green) !important; }
+html.dark .liouai-etape-meta p { color: #A1A9AE; }
+html.dark .liouai-etape::before { box-shadow: 0 0 0 4px #0f1a21; }
+html.dark .liouai-etape-projets { background: #2a2a1c; border-left-color: #E5C800; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* ---------- Schémas TikZ (assets/schemas/schema-*.svg) ---------- */
+/* Les SVG sont produits 1,6 fois plus grands que le dessin TikZ (scripts/compiler_schemas.py) ;
+   ils occupent au plus toute la largeur de la colonne centrale. */
+article img[src*="schema-"] {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  height: auto;
+}
+/* En mode sombre, le schéma garde son fond clair pour rester lisible */
+html.dark article img[src*="schema-"] {
+  background: #F3F5F6;
+  border-radius: var(--radius);
+  padding: 10px;
+}

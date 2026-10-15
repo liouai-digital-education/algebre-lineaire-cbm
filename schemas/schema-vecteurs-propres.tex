@@ -1,0 +1,32 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=1.1]
+\def\k{0.8}
+% avant
+\begin{scope}
+\node[titre] at (0,2.6) {avant : le cercle unité};
+\draw[gris, line width=0.6pt] (-2.2,0) -- (2.2,0); \draw[gris, line width=0.6pt] (0,-2.2) -- (0,2.2);
+\draw[navy, line width=1pt] (0,0) circle (\k);
+\draw[vertfonce, densely dashed, line width=0.7pt] (-1.6,-1.6) -- (1.6,1.6);
+\draw[jaune!85!navy, densely dashed, line width=0.7pt] (-1.6,1.6) -- (1.6,-1.6);
+\draw[vecteur, vertfonce] (0,0) -- ({\k*0.707},{\k*0.707}) node[right=3pt] {$\mathbf{v}_1$};
+\draw[vecteur, jaune!85!navy] (0,0) -- ({-\k*0.707},{\k*0.707}) node[left=3pt] {$\mathbf{v}_2$};
+\draw[vecteur, gristexte] (0,0) -- (\k,0) node[below right=-1pt] {$\mathbf{u}$};
+\end{scope}
+\draw[fleche, navy] (2.5,0.2) -- (3.7,0.2) node[midway, above, font=\small] {$A$};
+% après
+\begin{scope}[xshift=6.8cm]
+\node[titre] at (0,2.6) {après : une ellipse};
+\draw[gris, line width=0.6pt] (-2.4,0) -- (2.4,0); \draw[gris, line width=0.6pt] (0,-2.4) -- (0,2.4);
+\draw[navy, line width=1pt, smooth, samples=90, domain=0:360] plot ({\k*(2*cos(\x)+sin(\x))},{\k*(cos(\x)+2*sin(\x))});
+\draw[vertfonce, densely dashed, line width=0.7pt] (-2.1,-2.1) -- (2.1,2.1);
+\draw[jaune!85!navy, densely dashed, line width=0.7pt] (-1.6,1.6) -- (1.6,-1.6);
+\draw[vecteur, vertfonce, line width=1.8pt] (0,0) -- ({3*\k*0.707},{3*\k*0.707}) node[right=3pt] {$A\mathbf{v}_1 = 3\,\mathbf{v}_1$};
+\draw[vecteur, jaune!85!navy, line width=1.8pt] (0,0) -- ({-\k*0.707},{\k*0.707}) node[left=3pt] {$A\mathbf{v}_2 = \mathbf{v}_2$};
+\draw[vecteur, gristexte] (0,0) -- ({2*\k},{\k}) node[below right=-1pt] {$A\mathbf{u}$};
+\end{scope}
+\node[note, align=center] at (3.4,-3.1) {$A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ : la plupart des vecteurs tournent ($\mathbf{u}$ devient $A\mathbf{u}$).\\
+Les vecteurs propres $\mathbf{v}_1$ et $\mathbf{v}_2$ gardent leur direction : ils sont seulement étirés,\\
+d'un facteur appelé valeur propre ($\lambda_1 = 3$, $\lambda_2 = 1$).};
+\end{tikzpicture}
+\end{document}

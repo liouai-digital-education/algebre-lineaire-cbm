@@ -1,0 +1,17 @@
+\input{_preambule}
+\begin{document}
+\newcommand{\p}{\textcolor{vertfonce}{\boldsymbol{\blacksquare}}}  % pivot
+\newcommand{\e}{\ast}                                               % coefficient quelconque
+\newcommand{\z}{\textcolor{gris}{0}}                                % zéro obtenu par élimination
+\begin{tikzpicture}[mat/.style={font=\large, inner sep=2pt}]
+\node[mat] (m1) at (0,0) {$\left[\begin{array}{ccc|c} \p & \e & \e & \e \\ \e & \e & \e & \e \\ \e & \e & \e & \e \end{array}\right]$};
+\node[mat] (m2) at (6.2,0) {$\left[\begin{array}{ccc|c} \p & \e & \e & \e \\ \z & \p & \e & \e \\ \z & \e & \e & \e \end{array}\right]$};
+\node[mat] (m3) at (12.4,0) {$\left[\begin{array}{ccc|c} \p & \e & \e & \e \\ \z & \p & \e & \e \\ \z & \z & \p & \e \end{array}\right]$};
+\draw[fleche, vertfonce] (m1) -- node[above=3pt, font=\scriptsize, text=navy, align=center] {$L_2 \leftarrow L_2 - \dots L_1$\\ $L_3 \leftarrow L_3 - \dots L_1$} (m2);
+\draw[fleche, vertfonce] (m2) -- node[above=3pt, font=\scriptsize, text=navy] {$L_3 \leftarrow L_3 - \dots L_2$} (m3);
+\node[note, below=4pt of m1] {système de départ};
+\node[note, below=4pt of m2, align=center] {$r$ éliminé\\ des lignes 2 et 3};
+\node[note, below=4pt of m3, align=center] {forme triangulaire :\\ on remonte $l$, puis $t$, puis $r$};
+\node[note] at (6.2,-2.3) {$\textcolor{vertfonce}{\blacksquare}$ pivot \quad $\ast$ coefficient quelconque \quad $\textcolor{gris}{0}$ zéro obtenu par élimination};
+\end{tikzpicture}
+\end{document}

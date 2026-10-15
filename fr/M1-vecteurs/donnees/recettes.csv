@@ -1,0 +1,20 @@
+recette,farine,œufs,lait,beurre,sucre,chocolat,crème,fromage,tomate,oignon,ail,pâtes,riz,poulet,pomme de terre,huile d'olive,sel
+crêpes,60,50,125,10,10,0,0,0,0,0,0,0,0,0,0,0,1
+gaufres,70,40,100,25,15,0,0,0,0,0,0,0,0,0,0,0,1
+quatre-quarts,50,50,0,50,50,0,0,0,0,0,0,0,0,0,0,0,0
+gâteau au chocolat,25,50,0,40,35,50,0,0,0,0,0,0,0,0,0,0,0
+mousse au chocolat,0,60,0,0,10,50,0,0,0,0,0,0,0,0,0,0,0
+fondant au chocolat,15,50,0,50,30,60,0,0,0,0,0,0,0,0,0,0,0
+flan,0,55,150,0,30,0,0,0,0,0,0,0,0,0,0,0,0
+crème brûlée,0,40,25,0,30,0,125,0,0,0,0,0,0,0,0,0,0
+quiche lorraine,50,50,40,25,0,0,60,20,0,0,0,0,0,0,0,0,1
+gratin dauphinois,0,0,100,5,0,0,60,20,0,0,3,0,0,0,250,0,2
+pâtes carbonara,0,40,0,0,0,0,0,30,0,0,0,120,0,0,0,0,2
+pâtes à la tomate,0,0,0,0,0,0,0,0,150,30,3,120,0,0,0,10,2
+risotto au parmesan,0,0,0,15,0,0,0,30,0,30,0,0,90,0,0,5,2
+riz cantonais,0,50,0,0,0,0,0,0,0,20,0,0,100,40,0,10,2
+poulet rôti et pommes de terre,0,0,0,0,0,0,0,0,0,0,5,0,0,200,250,15,3
+soupe à l'oignon,10,0,0,15,0,0,0,30,0,150,0,0,0,0,0,0,2
+tortilla espagnole,0,100,0,0,0,0,0,0,0,50,0,0,0,0,200,20,2
+pizza margherita,120,0,0,0,0,0,0,80,80,0,0,0,0,0,0,10,2
+salade tomate mozzarella,0,0,0,0,0,0,0,100,200,0,0,0,0,0,0,15,1

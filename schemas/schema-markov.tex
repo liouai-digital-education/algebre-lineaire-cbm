@@ -1,0 +1,22 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[etat/.style={circle, draw=navy, line width=1pt, minimum size=1.6cm, align=center, font=\small}]
+\node[etat, fill=jauneclair] (S) at (0,0) {soleil};
+\node[etat, fill=fond] (N) at (4.4,0) {nuages};
+\node[etat, fill=vertclair] (P) at (2.2,-3.6) {pluie};
+\begin{scope}[every node/.style={font=\small, fill=white, inner sep=1.5pt}]
+\draw[fleche, navy] (S) to[bend left=18] node {0,2} (N);
+\draw[fleche, navy] (N) to[bend left=18] node {0,3} (S);
+\draw[fleche, navy] (N) to[bend left=18] node {0,3} (P);
+\draw[fleche, navy] (P) to[bend left=18] node {0,4} (N);
+\draw[fleche, navy] (S) to[bend left=18] node {0,1} (P);
+\draw[fleche, navy] (P) to[bend left=18] node {0,2} (S);
+\draw[fleche, navy] (S) to[out=150, in=210, looseness=5] node {0,7} (S);
+\draw[fleche, navy] (N) to[out=30, in=-30, looseness=5] node {0,4} (N);
+\draw[fleche, navy] (P) to[out=240, in=300, looseness=5] node {0,4} (P);
+\end{scope}
+\node[boite, anchor=west, font=\small, align=left] at (7.4,-1.6) {probabilités de transition\\ « d'aujourd'hui vers demain »\\[4pt]
+$P = \begin{pmatrix} 0{,}7 & 0{,}3 & 0{,}2 \\ 0{,}2 & 0{,}4 & 0{,}4 \\ 0{,}1 & 0{,}3 & 0{,}4 \end{pmatrix}$\\[4pt]
+colonne $j$ : où l'on va depuis l'état $j$ ;\\ chaque colonne a pour somme 1.};
+\end{tikzpicture}
+\end{document}

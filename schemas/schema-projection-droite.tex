@@ -1,0 +1,22 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=1.0]
+\coordinate (O) at (0,0);
+\coordinate (U) at (2.2,0.9);
+\coordinate (V) at (3.2,3.2);
+% droite portée par u
+\draw[gris, line width=0.8pt] ($(O)!-0.35!(U)$) -- ($(O)!2.9!(U)$) node[note, above left] {$\mathcal{D}$};
+\coordinate (P) at ($(O)!(V)!(U)$);
+\draw[jaune!85!navy, line width=1.3pt, densely dashed] (V) -- (P) node[midway, right=2pt, text=navy, font=\footnotesize] {$\mathbf{r} = \mathbf{v} - \mathbf{p}$};
+\draw[gristexte, line width=0.6pt] ($(P)!0.28cm!(V)$) -- ($ ($(P)!0.28cm!(V)$) + ($(P)!0.28cm!(O)$) - (P) $) -- ($(P)!0.28cm!(O)$);
+\draw[vecteur, navy] (O) -- (V) node[above] {$\mathbf{v}$};
+\draw[vecteur, vertfonce, line width=2pt] (O) -- (P) node[below right=1pt] {$\mathbf{p}$};
+\draw[vecteur, gristexte] (O) -- (U) node[below=2pt] {$\mathbf{u}$};
+\fill[navy] (O) circle (1.5pt) node[below left] {$O$};
+% formule
+\node[boite, anchor=west, align=left, font=\small] at (7.6,1.6) {projection de $\mathbf{v}$ sur la droite $\mathcal{D}$\\ engendrée par $\mathbf{u}$ :\\[3pt]
+$\mathbf{p} = \dfrac{\mathbf{u}\cdot\mathbf{v}}{\mathbf{u}\cdot\mathbf{u}}\,\mathbf{u}$\\[6pt]
+le reste $\mathbf{r}$ est orthogonal à $\mathbf{u}$ :\\ $\mathbf{u}\cdot\mathbf{r} = 0$\\[4pt]
+$\mathbf{p}$ est le point de $\mathcal{D}$\\ le plus proche de $\mathbf{v}$};
+\end{tikzpicture}
+\end{document}

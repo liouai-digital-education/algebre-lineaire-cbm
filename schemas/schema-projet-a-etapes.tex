@@ -1,0 +1,13 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[etape/.style={boite, text width=3.5cm, minimum height=2.3cm, font=\small}]
+\node[etape] (A1) at (0,0) {\textbf{A1 Cadrer et explorer}\\[3pt] sous-questions, données,\\ découpage, modèle de\\ référence (biais)};
+\node[etape] (A2) at (4.5,0) {\textbf{A2 Ressemblances}\\[3pt] films voisins par\\ similarité cosinus,\\ prédiction par voisins};
+\node[etape] (A3) at (9,0) {\textbf{A3 Facteurs latents}\\[3pt] matrice de rang faible,\\ SVD puis moindres\\ carrés alternés};
+\node[etape] (A4) at (13.5,0) {\textbf{A4 Évaluer et livrer}\\[3pt] test final, nouveaux\\ spectateurs, module\\ testé, rapport};
+\draw[fleche, navy] (A1) -- (A2); \draw[fleche, navy] (A2) -- (A3); \draw[fleche, navy] (A3) -- (A4);
+\foreach \x/\m in {0/{M6 (moindres carrés)}, 4.5/{M1 (vecteurs, cosinus)}, 9/{M8 (SVD), M6, M5}, 13.5/{M6, M8, tous}}{
+  \node[note] at (\x,-1.55) {\m};}
+\node[note] at (6.75,1.55) {chaque étape compare sa méthode à la précédente, sur les mêmes données de validation};
+\end{tikzpicture}
+\end{document}

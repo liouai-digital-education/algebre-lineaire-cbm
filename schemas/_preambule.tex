@@ -1,0 +1,30 @@
+% Préambule commun des schémas TikZ — charte Liouaï
+% Chaque schéma commence par \input{_preambule} puis \begin{document}.
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath,amssymb}
+\usepackage[european]{circuitikz}
+\usetikzlibrary{arrows.meta,positioning,calc,angles,quotes,decorations.pathreplacing,backgrounds}
+
+% Couleurs du logo Liouaï Digital Education
+\definecolor{navy}{HTML}{243743}
+\definecolor{vert}{HTML}{28B78D}
+\definecolor{vertfonce}{HTML}{167A5C}
+\definecolor{vertclair}{HTML}{EAF7F2}
+\definecolor{gris}{HTML}{A1A9AE}
+\definecolor{gristexte}{HTML}{5C6870}
+\definecolor{fond}{HTML}{F3F5F6}
+\definecolor{jaune}{HTML}{E5C800}
+\definecolor{jauneclair}{HTML}{FFFBD6}
+
+\tikzset{
+  every picture/.style={line cap=round, line join=round, color=navy, text=navy},
+  fleche/.style={-{Stealth[length=2.6mm,width=2mm]}, line width=1.1pt},
+  vecteur/.style={fleche, line width=1.4pt},
+  titre/.style={font=\bfseries\small, text=navy},
+  note/.style={font=\footnotesize, text=gristexte},
+  boite/.style={draw=navy, line width=0.9pt, rounded corners=5pt, fill=fond, align=center, inner sep=6pt},
+}

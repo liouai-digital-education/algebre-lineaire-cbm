@@ -1,0 +1,34 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=1.0]
+% ---- det > 0
+\begin{scope}
+\node[titre] at (1.7,3.55) {$\det A > 0$};
+\draw[gris!60, line width=0.4pt] (-0.3,-0.3) grid (3.6,3.1);
+\filldraw[fill=vertclair, draw=vertfonce, line width=1pt] (0,0) -- (3,1) -- (4,3) -- (1,2) -- cycle;
+\draw[vecteur, vertfonce] (0,0) -- (3,1) node[below right=-1pt] {$\begin{pmatrix} a \\ c \end{pmatrix}$};
+\draw[vecteur, navy] (0,0) -- (1,2) node[above left=-1pt] {$\begin{pmatrix} b \\ d \end{pmatrix}$};
+\node[font=\small] at (2,1.5) {aire $= ad - bc$};
+\draw[->, >=Stealth, gristexte, line width=0.8pt] (1.1,0.37) arc[start angle=18, end angle=63, radius=1.15];
+\node[note, align=center] at (1.8,-0.95) {exemple : $3 \times 2 - 1 \times 1 = 5$\\ le sens est conservé};
+\end{scope}
+% ---- det < 0
+\begin{scope}[xshift=6cm]
+\node[titre] at (1.7,3.55) {$\det A < 0$};
+\draw[gris!60, line width=0.4pt] (-0.3,-0.3) grid (3.6,3.1);
+\filldraw[fill=jauneclair, draw=jaune!80!navy, line width=1pt] (0,0) -- (1,2) -- (4,3) -- (3,1) -- cycle;
+\draw[vecteur, vertfonce] (0,0) -- (1,2) node[above left=-1pt] {$A\mathbf{e}_1$};
+\draw[vecteur, navy] (0,0) -- (3,1) node[below right=-1pt] {$A\mathbf{e}_2$};
+\draw[->, >=Stealth, gristexte, line width=0.8pt] (0.52,1.03) arc[start angle=63, end angle=18, radius=1.15];
+\node[note, align=center] at (1.8,-0.95) {même aire, mais la figure\\ est retournée (miroir)};
+\end{scope}
+% ---- det = 0
+\begin{scope}[xshift=12cm]
+\node[titre] at (1.7,3.55) {$\det A = 0$};
+\draw[gris!60, line width=0.4pt] (-0.3,-0.3) grid (3.6,3.1);
+\draw[vecteur, navy, line width=2.4pt] (0,0) -- (3,2.25) node[above] {$A\mathbf{e}_2$};
+\draw[vecteur, vertfonce] (0,0) -- (2,1.5) node[below right=-1pt] {$A\mathbf{e}_1$};
+\node[note, align=center] at (1.8,-0.95) {colonnes alignées : le plan\\ est aplati, aire nulle};
+\end{scope}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,108 @@
+# Configuration Jupyter Book 2 / MyST.
+# La clé project.toc est régénérée par scripts/generer_squelettes.py à partir de referentiel/parcours.yaml.
+version: 1
+project:
+  id: algebre-lineaire-cbm
+  title: Algèbre linéaire appliquée à la data science
+  subtitle: Un parcours Computer-Based Maths avec Python
+  keywords:
+  - algèbre linéaire
+  - Python
+  - NumPy
+  - Computer-Based Maths
+  toc:
+  - file: fr/index.md
+  - title: Guide
+    children:
+    - file: fr/guide/processus.md
+    - file: fr/guide/referentiel.md
+    - file: fr/guide/evaluation.md
+    - file: fr/guide/installation.md
+  - file: fr/M0-outils/index.md
+    children:
+    - file: fr/M0-outils/0.1-faire-calculer.ipynb
+    - file: fr/M0-outils/0.2-apprendre-seul.ipynb
+    - file: fr/M0-outils/0.3-erreurs-de-forme.ipynb
+    - file: fr/M0-outils/M0-projet-panier.ipynb
+  - file: fr/M1-vecteurs/index.md
+    children:
+    - file: fr/M1-vecteurs/1.1-forces-deplacements.ipynb
+    - file: fr/M1-vecteurs/1.2-melanger-lumieres.ipynb
+    - file: fr/M1-vecteurs/1.3-distance-ou-angle.ipynb
+    - file: fr/M1-vecteurs/M1-projet-recettes.ipynb
+  - file: fr/M2-systemes/index.md
+    children:
+    - file: fr/M2-systemes/2.1-mettre-en-equations.ipynb
+    - file: fr/M2-systemes/2.2-pivot-de-gauss.ipynb
+    - file: fr/M2-systemes/2.3-nombre-de-solutions.ipynb
+    - file: fr/M2-systemes/2.4-quand-l-ordinateur-se-trompe.ipynb
+    - file: fr/M2-systemes/M2-projet-trafic.ipynb
+  - file: fr/M3-transformations/index.md
+    children:
+    - file: fr/M3-transformations/3.1-deformer-une-grille.ipynb
+    - file: fr/M3-transformations/3.2-l-ordre-compte.ipynb
+    - file: fr/M3-transformations/3.3-coordonnees-homogenes.ipynb
+    - file: fr/M3-transformations/M3-projet-moteur-3d.ipynb
+  - file: fr/M4-inverse-determinant/index.md
+    children:
+    - file: fr/M4-inverse-determinant/4.1-determinant-et-aire.ipynb
+    - file: fr/M4-inverse-determinant/4.2-chiffre-de-hill.ipynb
+    - file: fr/M4-inverse-determinant/4.3-presque-singuliere.ipynb
+    - file: fr/M4-inverse-determinant/M4-projet-leontief.ipynb
+  - file: fr/M5-bases/index.md
+    children:
+    - file: fr/M5-bases/5.1-changer-de-base-couleurs.ipynb
+    - file: fr/M5-bases/5.2-variables-redondantes.ipynb
+    - file: fr/M5-bases/5.3-polynomes-vecteurs.ipynb
+    - file: fr/M5-bases/M5-projet-redondance.ipynb
+  - file: fr/M6-moindres-carres/index.md
+    children:
+    - file: fr/M6-moindres-carres/6.1-projeter.ipynb
+    - file: fr/M6-moindres-carres/6.2-la-meilleure-droite.ipynb
+    - file: fr/M6-moindres-carres/6.3-trois-outils.ipynb
+    - file: fr/M6-moindres-carres/6.4-valider-un-modele.ipynb
+    - file: fr/M6-moindres-carres/M6-projet-co2.ipynb
+  - file: fr/M7-valeurs-propres/index.md
+    children:
+    - file: fr/M7-valeurs-propres/7.1-directions-invariantes.ipynb
+    - file: fr/M7-valeurs-propres/7.2-population-leslie.ipynb
+    - file: fr/M7-valeurs-propres/7.3-chaines-de-markov.ipynb
+    - file: fr/M7-valeurs-propres/7.4-methode-de-la-puissance.ipynb
+    - file: fr/M7-valeurs-propres/M7-projet-pagerank.ipynb
+  - file: fr/M8-svd/index.md
+    children:
+    - file: fr/M8-svd/8.1-ce-que-fait-la-svd.ipynb
+    - file: fr/M8-svd/8.2-rang-faible.ipynb
+    - file: fr/M8-svd/8.3-acp.ipynb
+    - file: fr/M8-svd/8.4-quand-l-acp-trompe.ipynb
+    - file: fr/M8-svd/M8-projet-compression.ipynb
+  - file: fr/projets/index.md
+    children:
+    - file: fr/projets/A-recommandation-films.md
+      children:
+      - file: fr/projets/A-recommandation-films/A1-cadrer-et-explorer.ipynb
+      - file: fr/projets/A-recommandation-films/A2-ressemblances.ipynb
+      - file: fr/projets/A-recommandation-films/A3-facteurs-latents.ipynb
+      - file: fr/projets/A-recommandation-films/A4-evaluer-et-livrer.ipynb
+    - file: fr/projets/B-influence-reseau.md
+      children:
+      - file: fr/projets/B-influence-reseau/B1-cadrer-et-mesurer.ipynb
+      - file: fr/projets/B-influence-reseau/B2-influence-recursive.ipynb
+      - file: fr/projets/B-influence-reseau/B3-propager-et-diviser.ipynb
+      - file: fr/projets/B-influence-reseau/B4-generaliser-et-convaincre.ipynb
+    - file: fr/projets/C-chiffres-manuscrits.md
+      children:
+      - file: fr/projets/C-chiffres-manuscrits/C1-cadrer-et-explorer.ipynb
+      - file: fr/projets/C-chiffres-manuscrits/C2-plus-proches-voisins.ipynb
+      - file: fr/projets/C-chiffres-manuscrits/C3-sous-espaces.ipynb
+      - file: fr/projets/C-chiffres-manuscrits/C4-evaluer-et-livrer.ipynb
+  - file: en/index.md
+site:
+  template: book-theme
+  options:
+    logo: assets/liouai-mark.svg
+    logo_dark: assets/liouai-mark-dark.svg
+    logo_text: Liouaï · Algèbre linéaire appliquée à la data science
+    logo_alt: Liouaï Digital Education
+    favicon: assets/favicon.svg
+    style: assets/liouai.css

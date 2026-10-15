@@ -1,0 +1,28 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[x=0.62cm, y=0.62cm]
+\def\notes{{
+{4,0,0,5,0,0,3,0,0,0},
+{0,0,2,0,0,4,0,0,5,0},
+{5,0,0,4,0,0,0,0,0,1},
+{0,3,0,0,0,0,4,0,0,0},
+{0,0,0,5,4,0,0,0,0,0},
+{1,0,0,0,0,0,0,5,0,4}}}
+\foreach \i in {0,...,5}{\foreach \j in {0,...,9}{
+  \pgfmathsetmacro{\v}{\notes[\i][\j]}
+  \ifdim \v pt>0pt
+    \filldraw[fill=vertclair, draw=gris] (\j,-\i) rectangle ++(1,-1); \node[font=\small] at (\j+0.5,-\i-0.5) {\pgfmathprintnumber[int detect]{\v}};
+  \else
+    \filldraw[fill=white, draw=gris] (\j,-\i) rectangle ++(1,-1); \node[font=\footnotesize, text=gris] at (\j+0.5,-\i-0.5) {?};
+  \fi}}
+\draw[navy, line width=1pt] (0,0) rectangle (10,-6);
+\node[note, rotate=90] at (-0.6,-3) {spectateurs};
+\node[note] at (5,0.55) {films};
+\filldraw[fill=jauneclair, draw=navy, line width=1pt] (9,-1) rectangle ++(1,-1); \node[font=\small] at (9.5,-1.5) {?};
+\draw[fleche, navy] (10.1,-1.5) -- (11.6,-1.5);
+\node[boite, anchor=west, align=left, font=\small] at (11.8,-2.6) {Prévoir une case vide :\\[3pt]
+$\hat r_{uf} = \mu + b_u + b_f + \dots$\\[3pt]
+$\mu$ : moyenne de toutes les notes\\ $b_u$ : spectateur plus ou moins sévère\\ $b_f$ : film plus ou moins apprécié\\[3pt]
+\textcolor{gristexte}{environ 98 \% des cases sont vides}};
+\end{tikzpicture}
+\end{document}

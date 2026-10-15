@@ -1,0 +1,18 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[scale=0.9]
+\draw[fleche, gris, line width=0.8pt] (0,0) -- (8.3,0) node[note, below left] {hauteur de lâcher $h$};
+\draw[fleche, gris, line width=0.8pt] (0,0) -- (0,5.4) node[note, above right] {hauteur du rebond $r$};
+\draw[vertfonce, line width=1.6pt] (0.3,0.45) -- (7.9,4.95) node[right, font=\small, text=vertfonce] {$r = a\,h + b$};
+\foreach \x/\y in {1/1.35, 2/1.55, 3/2.55, 4/2.55, 5/3.6, 6/3.9, 7/4.8}{
+  \pgfmathsetmacro{\yd}{0.45 + (\x-0.3)*4.5/7.6}
+  \draw[jaune!85!navy, line width=1.2pt] (\x,\y) -- (\x,\yd);
+  \fill[navy] (\x,\y) circle (2.4pt);
+}
+\node[font=\footnotesize, text=navy, anchor=west] at (4.1,1.75) {résidu $e_i = r_i - (a\,h_i + b)$};
+\draw[gristexte, line width=0.5pt] (4.1,1.85) -- (4.0,2.4);
+\node[boite, anchor=west, align=left, font=\small] at (9.2,2.6) {Moindres carrés : on choisit $a$ et $b$\\ qui rendent la somme\\[3pt]
+$\displaystyle S(a,b) = \sum_i e_i^2$\\[3pt] la plus petite possible.\\[4pt]
+\textcolor{gristexte}{Les résidus sont verticaux :}\\ \textcolor{gristexte}{on mesure l'erreur sur $r$.}};
+\end{tikzpicture}
+\end{document}

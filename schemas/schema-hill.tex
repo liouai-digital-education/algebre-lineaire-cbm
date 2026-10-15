@@ -1,0 +1,19 @@
+\input{_preambule}
+\begin{document}
+\begin{tikzpicture}[
+  bloc/.style={boite, minimum width=2.5cm, minimum height=1.2cm, font=\small},
+  cle/.style={boite, fill=vertclair, draw=vertfonce, minimum width=2.3cm, minimum height=1.2cm, font=\small},
+  etape/.style={fleche, vertfonce, line width=1.2pt}]
+\node[bloc] (m) at (-0.5,0) {\textbf{message}\\ \texttt{RE ND EZ}};
+\node[bloc] (n) at (4.3,0) {\textbf{nombres}\\ $(17,4)\;(13,3)\dots$};
+\node[cle]  (k) at (8.6,0) {$\mathbf{c} = K\mathbf{p}$\\ modulo 26};
+\node[bloc] (c) at (12.6,0) {\textbf{chiffré}\\ \texttt{??\,??\,??}};
+\draw[etape] (m) -- node[above=2pt, note] {A=0, B=1, …} (n);
+\draw[etape] (n) -- node[above, note] {par paires} (k);
+\draw[etape] (k) -- (c);
+\node[cle] (ki) at (8.6,-2.4) {$\mathbf{p} = K^{-1}\mathbf{c}$\\ modulo 26};
+\draw[etape, navy] (c.south) |- (ki.east);
+\draw[etape, navy] (ki.west) -| node[below, pos=0.25, note] {déchiffrer} (n.south);
+\node[note, align=left, anchor=west] at (-1.3,-3.6) {Le déchiffrement exige que $K$ soit inversible \emph{modulo 26} :\\ il faut que $\det K$ n'ait aucun facteur commun avec 26 (ni 2, ni 13).};
+\end{tikzpicture}
+\end{document}

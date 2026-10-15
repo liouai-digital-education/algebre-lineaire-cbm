@@ -1,0 +1,131 @@
+# Référentiel « Core Computational Thinking » du projet Computer-Based Maths
+# Source : Required Outcomes from Core Computational Thinking (CBM, 2020)
+# Licence de la source : Creative Commons BY-NC 4.0 — creativecommons.org/licenses/by-nc/4.0
+# Codes corrigés des artefacts de mise en page du PDF (AACc → ACc, AMC2 → MC2).
+
+dimensions:
+  CP:
+    fr: Confiance pour aborder des problèmes nouveaux
+    en: Confidence to tackle new problems
+    famille: transversale
+    codes:
+      CPr: {fr: "Connaître le processus en 4 étapes", en: "Recalling the four-step process"}
+      CPa: {fr: "Appliquer le processus en 4 étapes", en: "Applying the four-step process"}
+      CPm: {fr: "Découper un gros problème en petits problèmes", en: "Managing the process of breaking large problems into small problems"}
+      CPt: {fr: "Appliquer des outils connus dans des contextes nouveaux", en: "Applying existing tools in new contexts"}
+      CPk: {fr: "Savoir s'auto-former à de nouveaux outils", en: "Knowing how to teach yourself new tools"}
+      CPi: {fr: "Interpréter le travail des autres", en: "Interpreting others' work"}
+  IF:
+    fr: Flair computationnel
+    en: Instinctive feel for computational thinking
+    famille: transversale
+    codes:
+      IFu: {fr: "Juger si la pensée computationnelle est utile pour un problème réel", en: "Identify the usefulness of computational thinking for a given real-world problem"}
+      IFp: {fr: "Évaluer la plausibilité d'une approche computationnelle", en: "Assessing the plausibility of computational thinking being useful"}
+      IFf: {fr: "Repérer les sophismes et mauvais usages du calcul", en: "Identifying fallacies and misuse of computation"}
+      IFr: {fr: "Sentir la fiabilité d'un modèle", en: "Having a feel for how reliable a model will be"}
+      IFe: {fr: "Estimer la solution avant de calculer", en: "Estimating a solution of the defined problem"}
+  CV:
+    fr: Critiquer et vérifier
+    en: Critiquing and verifying
+    famille: transversale
+    codes:
+      CVa: {fr: "Quantifier la validité et l'impact des hypothèses", en: "Quantifying the validity and impact of the assumptions made"}
+      CVl: {fr: "Quantifier la validité et l'impact des outils et concepts choisis", en: "Quantifying the validity and impact of tools and concepts chosen"}
+      CVc: {fr: "Lister les sources d'erreur liées aux limites du calcul", en: "Listing possible sources of error from computation failures or limitations"}
+      CVm: {fr: "Lister les sources d'erreur liées aux limites des concepts", en: "Listing possible sources of error from concepts' limitations"}
+      CVe: {fr: "Identifier erreurs systématiques et aléatoires", en: "Identifying systematic and random errors"}
+      CVt: {fr: "Corroborer ses résultats", en: "Being able to corroborate your results"}
+      CVr: {fr: "Qualifier la fiabilité des sources", en: "Qualifying reliability of sources"}
+      CVd: {fr: "Décider si les résultats suffisent pour avancer ou abandonner", en: "Deciding if the results are sufficient to move to the next step, including whether to abandon"}
+  GM:
+    fr: Généraliser un modèle, une théorie, une approche
+    en: Generalising a model/theory/approach
+    famille: transversale
+    codes:
+      GMi: {fr: "Repérer ressemblances et différences entre situations pour abstraire", en: "Identify similarities and differences between different situations for the purposes of abstraction"}
+      GMv: {fr: "Transformer des constantes en paramètres", en: "Taking constants from initial model and making them variable parameters"}
+      GMw: {fr: "Tirer des conclusions générales sur un type de problème", en: "Being able to draw wider conclusions about the behaviours of a type of problem"}
+      GMg: {fr: "Implémenter un modèle général sous forme de programme robuste", en: "Implementing a generalised model as a robust program"}
+  CC:
+    fr: Communiquer et collaborer
+    en: Communicating and collaborating
+    famille: transversale
+    codes:
+      CCv: {fr: "Expliquer visuellement", en: "Distilling or explaining ideas visually"}
+      CCp: {fr: "Expliquer oralement", en: "Distilling or explaining ideas verbally"}
+      CCd: {fr: "Expliquer par écrit", en: "Distilling or explaining ideas through written description"}
+      CCc: {fr: "Utiliser vocabulaire, symboles, schémas et code à bon escient", en: "Using vocabulary, symbols, diagrams, code accurately and appropriately for your audience"}
+      CCb: {fr: "Choisir la meilleure forme de communication", en: "Choosing the best form of communication for a given purpose"}
+      CCr: {fr: "Structurer un rapport ou une présentation", en: "Structuring and producing a presentation or report"}
+      CCg: {fr: "Travailler efficacement en groupe", en: "Being able to work effectively in a group to solve a problem"}
+      CCf: {fr: "Distinguer les faits qui soutiennent ou affaiblissent un argument", en: "Deciding which facts support or hinder an argument"}
+      CCi: {fr: "Comprendre et critiquer les idées présentées", en: "Understanding and critiquing ideas presented to you"}
+      CCq: {fr: "Questionner, interroger, contre-interroger", en: "Using techniques for questioning, interrogation, cross-examining"}
+  DQ:
+    fr: Définir la question (étape 1)
+    en: Defining the question (step 1)
+    famille: étape
+    codes:
+      DQf: {fr: "Filtrer l'information pertinente", en: "Filtering the relevant information from available information"}
+      DQm: {fr: "Identifier l'information manquante", en: "Identifying missing information to be found or calculated"}
+      DQq: {fr: "Formuler des questions précises", en: "Stating precise questions to tackle"}
+      DQa: {fr: "Identifier, énoncer et justifier les hypothèses", en: "Identifying, stating and explaining assumptions being made"}
+  AC:
+    fr: Abstraire sous forme calculable (étape 2)
+    en: Abstracting to computable form (step 2)
+    famille: étape
+    codes:
+      ACp: {fr: "Identifier le but de l'abstraction", en: "Identifying the purpose of the abstraction"}
+      ACd: {fr: "Faire des schémas pour structurer les connaissances", en: "Creating diagrams to structure knowledge"}
+      ACc: {fr: "Identifier les concepts pertinents et leurs relations", en: "Identifying relevant concepts and their relationship"}
+      ACr: {fr: "Comparer les mérites des concepts disponibles", en: "Understanding the relative merits of the concepts available"}
+      ACa: {fr: "Proposer des abstractions alternatives", en: "Being able to present alternative abstractions"}
+  C:
+    fr: Concepts (étape 2)
+    en: Concepts (step 2)
+    famille: étape
+    codes:
+      C1: {fr: "Décrire le concept", en: "Being able to describe the concept"}
+      C2: {fr: "Reconnaître si le concept s'applique", en: "Recognising whether the concept applies"}
+      C3: {fr: "Connaître les outils associés au concept", en: "Knowing which tools are relevant to the concept"}
+      C4: {fr: "Avoir l'intuition des mérites relatifs du concept", en: "Having intuition for the relative merits of the concept"}
+  T:
+    fr: Outils (étape 2)
+    en: Tools (step 2)
+    famille: étape
+    codes:
+      Tb: {fr: "Avoir l'intuition du comportement de l'outil", en: "Having intuition about the tool's behaviour"}
+      Ti: {fr: "Préparer des entrées correctes pour l'outil", en: "Composing appropriate and accurate input for the tool"}
+      Ta: {fr: "Appliquer l'outil", en: "Applying the tool or demonstrating experience of its application"}
+      Tc: {fr: "Connaître des outils comparables", en: "Being aware of comparable tools"}
+      Tr: {fr: "Comparer les mérites des outils dans le contexte", en: "Understanding the relative merits of different tools for use in the context"}
+  MC:
+    fr: Gérer les calculs (étape 3)
+    en: Managing computations (step 3)
+    famille: étape
+    codes:
+      MC1: {fr: "Choisir une technologie appropriée", en: "Choosing an appropriate technology"}
+      MC2: {fr: "Savoir interpréter une documentation", en: "Being able to interpret documentation"}
+      MC3: {fr: "Évaluer la faisabilité d'obtenir une réponse utile", en: "Assessing the feasibility of getting a useful answer"}
+      MC4: {fr: "Sentir si le résultat est plausible pour le contexte", en: "Having intuition about whether the output is appropriate for the context"}
+      MC5: {fr: "Combiner des outils pour produire le résultat", en: "Combining tools to produce results required"}
+      MC6: {fr: "Isoler la cause d'un problème de fonctionnement", en: "Isolating the cause(s) of operational problems"}
+      MC7: {fr: "Résoudre un problème de fonctionnement", en: "Resolving operational problems"}
+      MC8: {fr: "Optimiser la rapidité et la réutilisabilité du calcul", en: "Optimising both speed of obtaining results and reusability of computation"}
+  IN:
+    fr: Interpréter (étape 4)
+    en: Interpreting (step 4)
+    famille: étape
+    codes:
+      IN1: {fr: "Lire les représentations et notations courantes", en: "Reading common and relevant representations and notations"}
+      IN2: {fr: "Énoncer le résultat dans le contexte du problème", en: "Making statements about the output in the context of the original problem"}
+      IN3: {fr: "Relier les traits du résultat à leur sens réel", en: "Identifying and relating features of the output to real-world meaning"}
+      IN4: {fr: "Repérer les traits intéressants du résultat", en: "Identifying interesting features in results"}
+      IN5: {fr: "Formuler une hypothèse au-delà de l'étude", en: "Inferring a hypothesis beyond the current investigation"}
+
+niveaux:
+  0: {fr: "Non observé", en: "Not observed"}
+  1: {fr: "Guidé", en: "Guided"}
+  2: {fr: "Autonome", en: "Independent"}
+  3: {fr: "Transfert", en: "Transfer"}
