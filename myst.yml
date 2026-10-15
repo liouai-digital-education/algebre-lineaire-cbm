@@ -5,6 +5,7 @@ project:
   id: algebre-lineaire-cbm
   title: Algèbre linéaire appliquée à la data science
   subtitle: Un parcours Computer-Based Maths avec Python
+  github: https://github.com/liouai-digital-education/algebre-lineaire-cbm
   keywords:
   - algèbre linéaire
   - Python
